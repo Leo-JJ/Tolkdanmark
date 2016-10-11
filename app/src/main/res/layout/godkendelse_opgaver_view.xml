@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/roboto_calendar_white"
+    >
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:id="@+id/listView"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_below="@+id/textView5"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView4"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tidsbegrænsede tilbud"
+        android:textColor="#000000"
+        android:id="@+id/textView5"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/Resfreshopgavetilbud"
+        android:gravity="top"
+        android:visibility="gone" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dine tilbud"
+        android:textColor="#000000"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/textView6"
+        android:gravity="top"
+        android:layout_below="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/Resfreshopgavetilbud"
+        android:layout_alignEnd="@+id/Resfreshopgavetilbud" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:id="@+id/listView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Resfreshopgavetilbud"
+        android:layout_alignEnd="@+id/Resfreshopgavetilbud"
+        android:layout_below="@+id/textView6" />
+    <ImageButton
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:background="@drawable/roundbluebutton"
+        android:elevation="10dp"
+        android:src="@drawable/ic_refresh_white_24dp"
+        android:textColor="@color/roboto_calendar_white"
+        android:id="@+id/Resfreshopgavetilbud"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:background="@drawable/roundbutton"
+        android:elevation="10dp"
+        android:src="@drawable/places_ic_clear"
+        android:id="@+id/fjernalleopgaver"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/listView2"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

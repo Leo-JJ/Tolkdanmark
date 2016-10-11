@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bilagindhold"
+    android:background="@drawable/popupdesign">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_gravity="center_horizontal" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_top"
+        android:id="@+id/Klientensnavn"
+        android:inputType="text"
+        android:hint="Klientens navn"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/annuller1"
+        android:layout_toEndOf="@+id/annuller1" />
+
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_row"
+        android:inputType="text"
+        android:id="@+id/CPR"
+        android:maxLength="11"
+        android:hint="123456-7891"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/Klientensnavn"
+        android:layout_marginRight="12dp"
+        android:layout_alignLeft="@+id/Klientensnavn"
+        android:layout_alignStart="@+id/Klientensnavn" />
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_row"
+        android:inputType="text"
+        android:id="@+id/sprog"
+        android:enabled="false"
+        android:hint="Sprog"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/CPR"
+        android:layout_marginRight="12dp"
+        android:layout_alignLeft="@+id/CPR"
+        android:layout_alignStart="@+id/CPR" />
+
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_row"
+        android:inputType="date"
+        android:id="@+id/dato"
+        android:enabled="false"
+        android:hint="Dato"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/sprog"
+        android:layout_marginRight="12dp"
+        android:layout_toEndOf="@+id/text3"
+        android:layout_toRightOf="@+id/text3" />
+
+
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_row"
+        android:inputType="time"
+        android:id="@+id/tidfra"
+        android:editable="false"
+        android:hint="Tid fra"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/dato"
+        android:layout_marginRight="12dp"
+        android:layout_toEndOf="@+id/text4"
+        android:layout_toRightOf="@+id/text4" />
+
+
+    <EditText
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/group_row"
+        android:inputType="text"
+        android:id="@+id/Fakturaoplysninger"
+        android:hint="Fakturaoplysninger"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tomt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp" />
+
+        <EditText
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/group_row"
+            android:inputType="time"
+            android:editable="false"
+            android:id="@+id/tidtil"
+            android:hint="Tid til"
+            android:textColor="#000000"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/tidfra"
+            android:layout_marginRight="12dp"
+            android:layout_alignLeft="@+id/tidfra"
+            android:layout_alignStart="@+id/tidfra" />
+
+        <EditText
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/group_row"
+            android:inputType="text"
+            android:id="@+id/Tolkebruger"
+            android:hint="Tolkebruger"
+            android:enabled="false"
+            android:textColor="#000000"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/tidtil"
+            android:layout_marginRight="12dp"
+            android:layout_toEndOf="@+id/text9"
+            android:layout_alignLeft="@+id/tidtil"
+            android:layout_alignStart="@+id/tidtil" />
+
+
+        <EditText
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/group_bottom"
+            android:inputType="text"
+            android:id="@+id/tolk"
+            android:hint="tolk"
+            android:enabled="false"
+            android:textColor="#000000"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/Tolkebruger"
+            android:layout_marginRight="12dp"
+            android:layout_toRightOf="@+id/annuller1"
+            android:layout_toEndOf="@+id/annuller1" />
+
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/tomt"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/tolk"
+            android:visibility="visible"
+            android:gravity="center"
+            android:text="FakturaOplysninger"
+            android:layout_alignRight="@+id/Fakturaoplysninger"
+            android:layout_alignEnd="@+id/Fakturaoplysninger"
+            android:layout_alignLeft="@+id/Fakturaoplysninger"
+            android:layout_alignStart="@+id/Fakturaoplysninger" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/roundringredbutton"
+        android:src="@drawable/ic_clear_white_48dp"
+        android:id="@+id/annuller1"
+        android:layout_below="@+id/Fakturaoplysninger"
+        android:layout_alignLeft="@+id/Fakturaoplysninger"
+        android:layout_alignStart="@+id/Fakturaoplysninger" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/roundringyellowbutton"
+        android:text="Underskriv"
+        android:src="@drawable/ic_create_white_48dp"
+        android:id="@+id/Underskriv"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@+id/Fakturaoplysninger"
+        android:layout_alignRight="@+id/Fakturaoplysninger"
+        android:layout_alignEnd="@+id/Fakturaoplysninger" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Klientens navn:"
+            android:enabled="false"
+            android:id="@+id/text1"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/Klientensnavn"
+            android:layout_toLeftOf="@+id/Klientensnavn"
+            android:layout_alignTop="@+id/Klientensnavn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPR-NR:"
+            android:enabled="false"
+            android:id="@+id/text2"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/CPR"
+            android:layout_toLeftOf="@+id/CPR"
+            android:layout_alignTop="@+id/CPR"
+            android:layout_alignLeft="@+id/text7"
+            android:layout_alignStart="@+id/text7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sprog:"
+            android:enabled="false"
+            android:id="@+id/text7"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/sprog"
+            android:layout_toLeftOf="@+id/sprog"
+            android:layout_below="@+id/CPR"
+            android:layout_alignLeft="@+id/text3"
+            android:layout_alignStart="@+id/text3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dato:"
+            android:enabled="false"
+            android:id="@+id/text3"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/dato"
+            android:layout_alignTop="@+id/dato"
+            android:layout_toLeftOf="@+id/sprog"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tid fra"
+            android:id="@+id/text4"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/tidfra"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/tidfra"
+            android:layout_toLeftOf="@+id/sprog"
+            android:layout_toStartOf="@+id/sprog" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tid til"
+            android:id="@+id/text6"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/tidtil"
+            android:layout_alignTop="@+id/tidtil"
+            android:layout_toLeftOf="@+id/Tolkebruger"
+            android:layout_toStartOf="@+id/Tolkebruger" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tolkebruger:"
+            android:id="@+id/text8"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignBottom="@+id/Tolkebruger"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/Tolkebruger"
+            android:layout_toLeftOf="@+id/Tolkebruger"
+            android:layout_toStartOf="@+id/Tolkebruger" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tolk:"
+            android:id="@+id/text9"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/tolk"
+            android:layout_toLeftOf="@+id/tolk"
+            android:layout_toStartOf="@+id/tolk"
+            android:layout_alignBottom="@+id/tolk" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button3"
+            android:layout_alignTop="@+id/Underskriv"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

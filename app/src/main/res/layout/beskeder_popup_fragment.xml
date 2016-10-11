@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/popup_element"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="@drawable/popupdesign"
+android:padding="10dp"
+android:orientation="vertical">
+
+<TextView style="@style/TextAppearance.AppCompat.Headline"
+    android:id="@+id/beskedhead"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:textColor="#ff2d27"
+    android:text="Head"
+    android:gravity="center" />
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/scrollView"
+        android:scrollbarSize="10dp"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+        android:layout_below="@+id/beskedhead"
+        android:textIsSelectable="true"
+        android:layout_above="@+id/btn_close_popup">
+
+<TextView android:id="@+id/beskedindhold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="besked"
+    android:textColor="#ffffff"
+    android:textSize="20dp"
+    android:paddingLeft="10sp" />
+    </ScrollView>
+
+    <ImageButton
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:background="@drawable/roundbutton"
+        android:elevation="10dp"
+        android:src="@drawable/ic_clear_white_24dp"
+        android:textColor="@color/roboto_calendar_white"
+        android:id="@+id/btn_close_popup"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:id="@+id/relativeLayout"
+        android:layout_below="@+id/firsttable"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-5dp">
+
+        <Button
+            android:focusable="false"
+            android:background="@drawable/red_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Afvis"
+            android:id="@+id/Afvis"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignTop="@+id/Godkend"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:focusable="false"
+            android:background="@drawable/green_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Godkend"
+            android:id="@+id/Godkend"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/Afvis"
+            android:layout_toStartOf="@+id/Afvis"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firsttable"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tider"
+        android:layout_width="75dp"
+        android:layout_height="89dp"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="#000000"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:dividerHeight="4dp"
+        android:padding="10dp"
+        android:text=""
+        android:focusable="false"
+        android:layout_gravity="center_vertical" />
+    <View
+        android:id="@+id/farve"
+        android:layout_width="5dp"
+        android:layout_height="60dp"
+        android:background="#40AE49"
+        android:layout_gravity="center_vertical" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/opgavebeskrivelse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+        android:padding="10dp"
+        android:textSize="12dp"
+        android:text="opgaver"
+        android:focusable="false"
+        android:textColor="#000000" />
+
+    </LinearLayout>
+</RelativeLayout>
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/roboto_calendar_white"
+    >
+
+
+    <EditText
+        android:padding="10px"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/group_top"
+        android:id="@+id/Brugernavn"
+        android:inputType="text"
+        android:hint="Brugernavn"
+        android:layout_x="60dp"
+        android:layout_y="178dp"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000" />
+    <EditText
+     android:padding="10px"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/group_bottom"
+        android:inputType="textPassword"
+        android:id="@+id/Adgangskode"
+        android:hint="Adgangskode"
+        android:layout_x="60dp"
+        android:layout_y="219dp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/Brugernavn"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000" />
+    <Button
+
+        android:text="Login"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/red_button"
+        android:id="@+id/Login"
+        android:layout_x="64dp"
+        android:layout_y="279dp"
+        android:singleLine="false"
+        android:layout_gravity="center"
+        android:layout_below="@+id/Adgangskode"
+        android:layout_alignStart="@+id/Adgangskode"
+        android:layout_marginTop="15dp"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="637dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/teleoperadoraclientes"
+        android:layout_above="@+id/Brugernavn"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/loginbilled"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

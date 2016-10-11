@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_maps"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <fragment
+            android:id="@+id/map2"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/popupdesignmap"
+           />
+
+    </FrameLayout>
+
+    <ImageButton
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:background="@drawable/roundbutton"
+        android:elevation="10dp"
+        android:src="@drawable/ic_clear_white_24dp"
+        android:textColor="@color/roboto_calendar_white"
+        android:id="@+id/afslut"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+
+
+</RelativeLayout>

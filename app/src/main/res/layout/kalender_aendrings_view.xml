@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/roboto_calendar_white">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundringgreenbutton"
+        android:text="Gem"
+        android:id="@+id/Gem"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/kommentar"
+        android:layout_alignEnd="@+id/kommentar"
+        android:layout_below="@+id/kommentar"
+        android:layout_toRightOf="@+id/radioButton2"
+        android:layout_toEndOf="@+id/radioButton2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundringredbutton"
+        android:text="annuller"
+        android:id="@+id/annuller"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/kommentar"
+        android:layout_toLeftOf="@+id/radioButton2"
+        android:layout_alignLeft="@+id/kommentar"
+        android:layout_alignStart="@+id/kommentar" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hele dagen "
+        android:id="@+id/radioButton2"
+        android:checked="false"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startdato"
+        android:enabled="false"
+        android:text="Start Dato:"
+        android:layout_above="@+id/starttid"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/slutdato"
+        android:enabled="false"
+        android:text="Start Tid:"
+        android:layout_above="@+id/editText7"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:gravity="top"
+        android:singleLine="false"
+        android:lines="5"
+        android:hint="  Kommentar"
+        android:paddingLeft="10dp"
+        android:background="@drawable/kanter"
+        android:id="@+id/kommentar"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/radioButton2"
+        android:textColor="#000000"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/startdatotext"
+        android:layout_alignTop="@+id/startdato"
+        android:textColor="#000000"
+        android:layout_alignRight="@+id/slutdatotext"
+        android:layout_alignEnd="@+id/slutdatotext" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/slutdatotext"
+        android:layout_above="@+id/starttidtext"
+        android:layout_toEndOf="@+id/startdato"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/starttid"
+        android:enabled="false"
+        android:text="Slut Dato:"
+        android:layout_above="@+id/slutdato"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText7"
+        android:enabled="false"
+        android:text="Slut Tid:"
+        android:layout_above="@+id/radioButton2"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/sluttidtext"
+        android:layout_alignBottom="@+id/editText7"
+        android:layout_alignStart="@+id/slutdatotext"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/starttidtext"
+        android:layout_alignTop="@+id/slutdato"
+        android:layout_alignStart="@+id/sluttidtext"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/spinner"
+        android:layout_above="@+id/startdato"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/radioButton2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Post Nr"
+        android:paddingLeft="10dp"
+        android:id="@+id/postnr"
+        android:background="@drawable/kanter"
+        android:visibility="invisible"
+        android:layout_alignTop="@+id/spinner"
+        android:layout_above="@+id/startdatotext"
+        android:layout_alignEnd="@+id/startdatotext"
+        android:layout_toEndOf="@+id/spinner" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space" />
+
+
+</RelativeLayout>

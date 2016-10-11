@@ -21,7 +21,9 @@ import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Excelbilag_logik;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -36,9 +38,9 @@ public class Tolkensunderskrift_fragment extends Fragment {
     private SignaturePad mSignaturePad;
     private ImageButton mClearButton;
     private ImageButton mSaveButton;
-    //private Excelbilag_logik excel = new Excelbilag_logik();
+    private Excelbilag_logik excel = new Excelbilag_logik();
     private Uri contentUri;
-    //private bilagobjekt bilagindholdet;
+    private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
 
@@ -102,7 +104,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
         }
 
         if (getArguments() != null) {
-            //bilagindholdet = (bilagobjekt) getArguments().getSerializable("bilagindholdet");
+            regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
         return rod;
     }
@@ -138,7 +140,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
             mediaScanIntent.setData(contentUri);
             getActivity().sendBroadcast(mediaScanIntent);
             result = true;
-            //excel.savetoexcel(photo,getContext(),bilagindholdet);
+            //excel.savetoexcel(photo,getContext(), regionbilagindholdet, getActivity());
         } catch (Exception e) {
             e.printStackTrace();
         }

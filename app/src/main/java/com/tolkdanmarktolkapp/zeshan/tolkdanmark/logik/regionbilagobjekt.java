@@ -4,14 +4,11 @@ package com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik;
 import java.io.Serializable;
 import java.io.StringReader;
 
-/**
- * Created by Zeshan on 14-01-2016.
- */
-public class laegebilagobjekt implements Serializable {
+public class regionbilagobjekt implements Serializable {
 
     private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", eva5 = "";
 
-    public laegebilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String eva5) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String eva5) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;

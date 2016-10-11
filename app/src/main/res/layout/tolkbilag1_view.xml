@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tolkebilag1_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -47,51 +48,16 @@
                 android:textColor="#000000" />
 
             <EditText
-                android:id="@+id/kNavn"
+                android:id="@+id/kBy"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_alignEnd="@+id/tNavn"
-                android:layout_alignLeft="@+id/tNavn"
-                android:layout_alignRight="@+id/tNavn"
-                android:layout_alignStart="@+id/tNavn"
-                android:layout_below="@+id/tNavn"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kPostnr"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/group_row"
-                android:hint="Klientens navn *"
-                android:inputType="text"
-                android:padding="10dp"
-                android:textColor="#000000" />
-
-            <EditText
-                android:id="@+id/kCpr"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignEnd="@+id/kNavn"
-                android:layout_alignLeft="@+id/kNavn"
-                android:layout_alignRight="@+id/kNavn"
-                android:layout_alignStart="@+id/kNavn"
-                android:layout_below="@+id/kNavn"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/group_row"
-                android:hint="Klientens CPR-nr *"
-                android:inputType="number"
-                android:maxLength="10"
-                android:padding="10dp"
-                android:textColor="#000000" />
-
-            <EditText
-                android:id="@+id/kAdress"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignEnd="@+id/kCpr"
-                android:layout_alignLeft="@+id/kCpr"
-                android:layout_alignRight="@+id/kCpr"
-                android:layout_alignStart="@+id/kCpr"
-                android:layout_below="@+id/kCpr"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/group_row"
-                android:hint="Adresse *"
-                android:inputType="text"
+                android:editable="false"
+                android:hint="By *"
+                android:inputType="none"
                 android:padding="10dp"
                 android:textColor="#000000" />
 
@@ -99,10 +65,7 @@
                 android:id="@+id/kPostnr"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_alignEnd="@+id/kAdress"
-                android:layout_alignLeft="@+id/kAdress"
-                android:layout_alignRight="@+id/kAdress"
-                android:layout_alignStart="@+id/kAdress"
+                android:layout_alignParentStart="true"
                 android:layout_below="@+id/kAdress"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/group_row"
@@ -113,19 +76,57 @@
                 android:textColor="#000000" />
 
             <EditText
-                android:id="@+id/kBy"
+                android:id="@+id/kAdress"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_alignEnd="@+id/kPostnr"
-                android:layout_alignLeft="@+id/kPostnr"
-                android:layout_alignRight="@+id/kPostnr"
-                android:layout_alignStart="@+id/kPostnr"
-                android:layout_below="@+id/kPostnr"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kCpr"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/group_row"
-                android:editable="false"
-                android:hint="By *"
-                android:inputType="none"
+                android:hint="Adresse *"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/kCpr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kNavn"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
+                android:hint="Klientens CPR-nr *"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/tCpr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tNavn"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
+                android:ems="10"
+                android:hint="Tolks CPR *"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/kNavn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tCpr"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
+                android:hint="Klientens navn *"
+                android:inputType="text"
                 android:padding="10dp"
                 android:textColor="#000000" />
 

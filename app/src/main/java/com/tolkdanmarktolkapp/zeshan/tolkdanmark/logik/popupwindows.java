@@ -60,6 +60,7 @@ public class popupwindows {
     private ImageButton luk, btnClosePopup, navigere, information, tolkebilag, anullerbilag, underskrivbilag;
     private EditText klientsnavn, cpr, sprog, dato, tidfra, tidtil, tolkebruger, tolk, fraktura;
     private FragmentActivity activity;
+    private Fragmentmanager fragments = new Fragmentmanager();
     private MarkerOptions markerOptions;
     private LatLng latLng, myPosition;
     private TextView beskedhead, beskedindhold;
@@ -424,9 +425,8 @@ public class popupwindows {
                 try {
 
                     if (object.getString("IsLager").equals("1")) {
-                        Fragment fragment3 = new Tolkbilag1_fragment();
-                        activity.getSupportFragmentManager().beginTransaction().add(R.id.container, fragment3).commit();
-                        Toast.makeText(activity.getBaseContext(), "Lager Inholds Bilag", Toast.LENGTH_SHORT).show();
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag1fragment()).commit();
+                        Toast.makeText(activity.getBaseContext(), "Læger Inholds Bilag", Toast.LENGTH_SHORT).show();
                     } else {
                         initiatePopupWindowbilagindhold(activity);
                     }

@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 
+import org.json.JSONObject;
+
 /**
  * Created by Jiahua on 26-09-2016.
  */
@@ -27,6 +29,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
     private EditText dato, fratid, tiltid, sprog;
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
+    public static JSONObject object;
     private Button next = null;
     private String s1, s2, s3, s4;
     private int[] val4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
@@ -44,6 +47,15 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         dato = (EditText) rod.findViewById(R.id.Dato);
         fratid = (EditText) rod.findViewById(R.id.Fratid);
         tiltid = (EditText) rod.findViewById(R.id.Tiltid);
+
+        try {
+            dato.setText(object.getString("order_date"));
+            fratid.setText(object.getString("starttime"));
+            tiltid.setText(object.getString("endtime"));
+            sprog.setText(object.getString("language"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         String[] tolkforbindelse = new String[]{
                 "Ambulant besøg",

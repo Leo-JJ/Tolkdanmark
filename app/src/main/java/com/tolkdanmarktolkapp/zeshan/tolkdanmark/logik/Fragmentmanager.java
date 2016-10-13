@@ -27,11 +27,11 @@ public class Fragmentmanager {
     public static Fragment Beskederfragment = new Beskeder_fragment();
     public static Fragment Profilfragment = new Profil_fragmant();
     public static Fragment kontaktfragment = new Kontankt_fragment();
-    private static Fragment Tolkbilag1fragment = new Tolkbilag1_fragment();
-    private static Fragment Tolkbilag2fragment = new Tolkbilag2_fragment();
-    private static Fragment Tolkbilag3fragment = new Tolkbilag3_fragment();
-    private static Fragment Laegeunderskriftfragment = new Laegeunderskrift_fragment();
-    private static Fragment Tolkensunderskriftfragment = new Tolkensunderskrift_fragment();
+    public static Fragment Tolkbilag1fragment = new Tolkbilag1_fragment();
+    public static Fragment Tolkbilag2fragment = new Tolkbilag2_fragment();
+    public static Fragment Tolkbilag3fragment = new Tolkbilag3_fragment();
+    public static Fragment Laegeunderskriftfragment = new Laegeunderskrift_fragment();
+    public static Fragment Tolkensunderskriftfragment = new Tolkensunderskrift_fragment();
 
     public Fragment getKalenderfragment() {
         return Kalenderfragment;
@@ -62,27 +62,22 @@ public class Fragmentmanager {
     }
 
     public Fragment getTolkbilag1fragment() {
-
         return Tolkbilag1fragment;
     }
 
     public Fragment getTolkbilag2fragment() {
-
         return Tolkbilag2fragment;
     }
 
     public Fragment getTolkbilag3fragment() {
-
         return Tolkbilag3fragment;
     }
 
     public static Fragment getLaegeunderskriftfragment() {
-
         return Laegeunderskriftfragment;
     }
 
     public static Fragment getTolkensunderskriftfragment() {
-
         return Tolkensunderskriftfragment;
     }
 

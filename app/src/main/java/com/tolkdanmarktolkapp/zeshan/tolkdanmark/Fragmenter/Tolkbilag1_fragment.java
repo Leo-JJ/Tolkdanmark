@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class Tolkbilag1_fragment extends Fragment implements View.OnClickListener {
 
     private Button next = null;
-    private EditText klientsnavn, cpr, tolkebruger, adresse, tolk, tolkcpr, postnr, by;
+    private EditText klientsnavn, cpr, adresse, tolk, tolkcpr, postnr, by;
     public static JSONObject object;
     private Fragmentmanager fragments = new Fragmentmanager();
 

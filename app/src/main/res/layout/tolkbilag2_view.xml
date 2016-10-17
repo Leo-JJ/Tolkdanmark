@@ -79,6 +79,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/spinnerOmfang"
         android:editable="false"
+        android:focusable="false"
         android:ems="10"
         android:text="Ydelsens type:" />
 
@@ -92,17 +93,6 @@
         android:layout_toEndOf="@+id/typeText" />
 
     <EditText
-        android:id="@+id/omfangText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tolkText"
-        android:editable="false"
-        android:ems="10"
-        android:focusable="false"
-        android:text="Ydelsens omfang:" />
-
-    <EditText
         android:id="@+id/Dato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,13 +100,14 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/typeText"
         android:editable="false"
+        android:inputType="date"
         android:ems="10"
         android:enabled="false"
         android:hint="Dato *"
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/Fratid"
+        android:id="@+id/startTid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -128,29 +119,41 @@
         android:textColor="#000000" />
 
     <EditText
-        android:id="@+id/Tiltid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Fratid"
-        android:editable="false"
-        android:ems="10"
-        android:hint="Ydelsen Slut Tid *"
-        android:textColor="#000000" />
-
-    <EditText
         android:id="@+id/Sprog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Tiltid"
+        android:layout_below="@+id/slutTid"
+        android:inputType="text"
         android:editable="false"
         android:ems="10"
         android:enabled="false"
         android:focusable="false"
         android:hint="Sprog *"
         android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/omfangText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:text="Ydelsens omfang:"
+        android:layout_below="@+id/tolkText"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/slutTid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:hint="Ydelsen Slut Tid *"
+        android:textColor="#000000"
+        android:layout_below="@+id/startTid"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

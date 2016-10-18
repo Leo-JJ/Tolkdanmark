@@ -1,13 +1,22 @@
 package com.tolkdanmarktolkapp.zeshan.tolkdanmark.Fragmenter;
 
+import android.content.Context;
+import android.os.SystemClock;
+import android.renderscript.ScriptGroup;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,6 +30,7 @@ import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 public class Tolkbilag3_fragment extends Fragment implements View.OnClickListener {
 
     private Spinner evaType1, evaType2, evaType3, evaType4;
+    private EditText evaComment, laegeydernr;
     private TextView textView1, textView2, textView3, textView4; // Slettes senere, det er kun for at teste
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next;
@@ -35,6 +45,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType2 = (Spinner) rod.findViewById(R.id.evaType2);
         evaType3 = (Spinner) rod.findViewById(R.id.evaType3);
         evaType4 = (Spinner) rod.findViewById(R.id.evaType4);
+
+        evaComment = (EditText) rod.findViewById(R.id.evaComment);
 
         // Slettes senere, det er kun for at teste
         textView1 = (TextView) rod.findViewById(R.id.textView1);
@@ -129,10 +141,12 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         return rod;
     }
 
+
     @Override
     public void onClick(View v) {
         if (v == next) {
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getLaegeunderskriftfragment()).addToBackStack(fragments.getLaegeunderskriftfragment().getTag()).commit();
         }
     }
+
 }

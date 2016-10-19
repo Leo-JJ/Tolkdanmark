@@ -144,7 +144,6 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         return rod;
     }
 
-
     @Override
     public void onClick(View v) {
         if (v == next) {

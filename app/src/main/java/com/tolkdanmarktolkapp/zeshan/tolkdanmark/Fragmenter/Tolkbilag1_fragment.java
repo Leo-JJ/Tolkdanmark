@@ -11,8 +11,6 @@ import android.widget.EditText;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 
-
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**

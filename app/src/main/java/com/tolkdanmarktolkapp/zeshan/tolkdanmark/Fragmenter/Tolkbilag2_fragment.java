@@ -18,7 +18,6 @@ import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 
 import org.json.JSONObject;
-
 import java.util.Objects;
 
 /**

@@ -83,7 +83,6 @@
         android:ems="10"
         android:text="Ydelsens type:" />
 
-
     <Spinner
         android:id="@+id/spinnerType"
         android:layout_width="match_parent"

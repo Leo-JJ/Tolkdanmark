@@ -425,7 +425,7 @@ public class popupwindows {
                 try {
 
                     if (object.getString("IsLager").equals("1")) {
-                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag1fragment()).commit();
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag1fragment()).addToBackStack(fragments.getTolkbilag1fragment().getTag()).commit();
                         Toast.makeText(activity.getBaseContext(), "Læger bilagindgold", Toast.LENGTH_SHORT).show();
                     } else {
                         initiatePopupWindowbilagindhold(activity);

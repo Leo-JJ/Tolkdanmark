@@ -115,7 +115,7 @@
             <EditText
                 android:id="@+id/evaComment"
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="120dp"
                 android:layout_alignParentStart="true"
                 android:layout_below="@id/evaType4"
                 android:background="@drawable/kanter"
@@ -125,6 +125,7 @@
                 android:inputType="textMultiLine"
                 android:lines="5"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
                 android:textColor="#000000"/>
 
             <TextView
@@ -168,7 +169,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:background="@drawable/kanter"
-                android:text="Tryk næste for at underskriver"
+                android:text="Tryk her for at underskriv"
                 android:textColor="#000000" />
         </RelativeLayout>
     </ScrollView>

@@ -34,7 +34,8 @@
         android:editable="false"
         android:ems="10"
         android:focusable="false"
-        android:text="Tolkning i forbindelse med:" />
+        android:text="Tolkning i forbindelse med:"
+        android:inputType="none"/>
 
     <Spinner
         android:id="@+id/spinnerOmfang"
@@ -78,6 +79,7 @@
         android:layout_below="@+id/spinnerOmfang"
         android:editable="false"
         android:focusable="false"
+        android:inputType="none"
         android:ems="10"
         android:text="Ydelsens type:" />
 
@@ -139,6 +141,7 @@
         android:ems="10"
         android:focusable="false"
         android:text="Ydelsens omfang:"
+        android:inputType="none"
         android:layout_below="@+id/tolkText"
         android:layout_alignParentStart="true" />
 

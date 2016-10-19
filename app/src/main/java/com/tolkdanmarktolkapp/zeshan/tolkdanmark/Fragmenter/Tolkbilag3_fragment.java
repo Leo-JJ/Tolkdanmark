@@ -23,6 +23,8 @@ import android.widget.TextView;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 
+import org.json.JSONObject;
+
 /**
  * Created by Jiahua on 27-09-2016.
  */
@@ -34,6 +36,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     private TextView textView1, textView2, textView3, textView4; // Slettes senere, det er kun for at teste
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next;
+    public static JSONObject object;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
         View rod = i.inflate(R.layout.tolkbilag3_view, container, false);

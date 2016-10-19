@@ -4,13 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/roboto_calendar_white"
-    >
+    android:background="@color/roboto_calendar_white">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
 
         <FrameLayout
             android:id="@+id/container"

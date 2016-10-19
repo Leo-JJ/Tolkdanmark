@@ -83,6 +83,7 @@ public class Kalender_fragment extends Fragment implements CalendarView.RobotoCa
                         popupwindows.initiatePopupWindowchoose(getActivity(), Dagensopgaver.get(position));
                         Tolkbilag1_fragment.object = Dagensopgaver.get(position);
                         Tolkbilag2_fragment.object = Dagensopgaver.get(position);
+                        Tolkbilag3_fragment.object = Dagensopgaver.get(position);
                     }
 
                 } catch (Exception e) {

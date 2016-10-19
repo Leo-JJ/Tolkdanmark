@@ -9,4 +9,16 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="google_app_id">AIzaSyCOtUGgONsu1nFkKE0Hy_L4VGa_nx7xVfE</string>
+    <string name="tolkebureauets_yder_nr_ean_nr">Tolkebureauets Yder nr./EAN nr. *</string>
+    <string name="udfoerendes_tolks_navn">Udførendes tolks navn *</string>
+    <string name="by">By *</string>
+    <string name="post_nr">Post nr *</string>
+    <string name="adresse">Adresse *</string>
+    <string name="klientens_cpr_nr">Klientens CPR-nr *</string>
+    <string name="tolks_cpr">Tolks CPR *</string>
+    <string name="klientens_navn">Klientens navn *</string>
+    <string name="next">Næste</string>
+    <string name="laegens_ydernummer">Lægens ydernummer *</string>
+    <string name="udfyldes_af_tolk">UDFYLDES AF TOLK</string>
+    <string name="dato">Dato *</string>
 </resources>

@@ -4,96 +4,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Spinner
-        android:id="@+id/evaType1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/evaText1"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/evaText1"
-        android:layout_toEndOf="@+id/evaText2" />
-
-    <EditText
-        android:id="@+id/evaText2"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/evaText1"
-        android:editable="false"
-        android:ems="10"
-        android:text="Kommunikation mellem rekvirent og tolk:" />
-
-    <Spinner
-        android:id="@+id/evaType2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/evaText2"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/evaText1"
-        android:layout_toEndOf="@+id/evaText2" />
-
-    <EditText
-        android:id="@+id/evaText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/evaText2"
-        android:editable="false"
-        android:ems="10"
-        android:text="Vil du anvende tolken igen:" />
-
-    <Spinner
-        android:id="@+id/evaType3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/evaText3"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/evaType2"
-        android:layout_toEndOf="@+id/evaText2" />
-
-    <EditText
-        android:id="@+id/evaText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/evaText3"
-        android:editable="false"
-        android:ems="10"
-        android:text="Kom tolken til tiden:" />
-
-    <Spinner
-        android:id="@+id/evaType4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/evaText4"
-        android:layout_alignEnd="@+id/evaType2"
-        android:layout_below="@+id/evaType3"
-        android:layout_toEndOf="@+id/evaText3" />
+        android:layout_alignParentTop="true"
+        android:text="UDFYLDES AF LÆGE"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
     <ScrollView
-        android:id="@+id/sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/evaText4"
         android:layout_alignParentBottom="true"
+        android:layout_below="@id/textView"
         android:fillViewport="true">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-    <EditText
-        android:id="@+id/evaComment"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/kanter"
-        android:ems="10"
-        android:gravity="top"
-        android:hint="Evaluering foretaget af:"
-        android:inputType="textMultiLine"
-        android:lines="5"
-        android:paddingLeft="10dp"
-        android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/laegeydernr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/evaType1"
+                android:layout_alignParentStart="true"
+                android:editable="false"
+                android:ems="10"
+                android:hint="@string/laegens_ydernummer"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/evaText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/laegeydernr"
+                android:editable="false"
+                android:ems="10"
+                android:text="Kommunikaion mellem tolk og patient:" />
+
+            <Spinner
+                android:id="@+id/evaType1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/evaText1"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/evaText1"
+                android:layout_toEndOf="@+id/evaText2" />
+
+            <EditText
+                android:id="@+id/evaText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/evaText1"
+                android:editable="false"
+                android:ems="10"
+                android:text="Kommunikation mellem rekvirent og tolk:" />
+
+            <Spinner
+                android:id="@+id/evaType2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/evaText2"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/evaText1"
+                android:layout_toEndOf="@+id/evaText2" />
+
+            <EditText
+                android:id="@+id/evaText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/evaText2"
+                android:editable="false"
+                android:ems="10"
+                android:text="Vil du anvende tolken igen:" />
+
+            <Spinner
+                android:id="@+id/evaType3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/evaText3"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/evaType2"
+                android:layout_toEndOf="@+id/evaText2" />
+
+            <EditText
+                android:id="@+id/evaText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/evaText3"
+                android:editable="false"
+                android:ems="10"
+                android:text="Kom tolken til tiden:" />
+
+            <Spinner
+                android:id="@+id/evaType4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/evaText4"
+                android:layout_alignEnd="@+id/evaType2"
+                android:layout_below="@+id/evaType3"
+                android:layout_toEndOf="@+id/evaText3" />
+
+            <EditText
+                android:id="@+id/evaComment"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/evaType4"
+                android:background="@drawable/kanter"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Evaluering foretaget af:"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:paddingLeft="10dp"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/textView1"
@@ -128,49 +160,17 @@
                 android:layout_below="@+id/evaComment"
                 android:text="Counter" />
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/kanter"
-            android:text="Tryk næste for at underskriver"
-            android:textColor="#000000" />
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/kanter"
+                android:text="Tryk næste for at underskriver"
+                android:textColor="#000000" />
         </RelativeLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="UDFYLDES AF LÆGE"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/laegeydernr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/evaType1"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:ems="10"
-        android:editable="false"
-        android:hint="Lægens ydernummer *"
-        android:textColor="#000000" />
-
-    <EditText
-        android:id="@+id/evaText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/laegeydernr"
-        android:editable="false"
-        android:ems="10"
-        android:text="Kommunikaion mellem tolk og patient:" />
 
 </RelativeLayout>

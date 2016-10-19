@@ -73,11 +73,11 @@ public class Fragmentmanager {
         return Tolkbilag3fragment;
     }
 
-    public static Fragment getLaegeunderskriftfragment() {
+    public Fragment getLaegeunderskriftfragment() {
         return Laegeunderskriftfragment;
     }
 
-    public static Fragment getTolkensunderskriftfragment() {
+    public Fragment getTolkensunderskriftfragment() {
         return Tolkensunderskriftfragment;
     }
 

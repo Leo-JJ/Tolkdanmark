@@ -43,7 +43,8 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
             cpr.setText(object.getString("cpr"));
             tolk.setText(object.getString("interpreter_name"));
             //tolkcpr.setText(object.getString("tolkcpr"));
-            adresse.setText(object.getString("address").substring(0,object.getString("address").indexOf(",")));
+            adresse.setText(object.getString("address"));
+            //adresse.setText(object.getString("address").substring(0,object.getString("address").indexOf(",")));
             //postnr.setText(object.getString("address").substring(object.getString("address").indexOf(",")+1));
             //by.setText(object.getString("address").substring(object.getString("address").lastIndexOf(",")+7));
 

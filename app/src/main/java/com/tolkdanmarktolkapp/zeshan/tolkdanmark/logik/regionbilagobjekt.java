@@ -8,7 +8,7 @@ public class regionbilagobjekt implements Serializable {
 
     private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", eva5 = "";
 
-    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String eva5) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String eva5) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;
@@ -17,6 +17,7 @@ public class regionbilagobjekt implements Serializable {
         this.tidfra = tidfra;
         this.tidtil = tidtil;
         this.tolk = tolk;
+        this.getreference_id = getreference_id;
         this.adresse = adresse;
         this.postnr = postnr;
         this.by = by;
@@ -41,10 +42,6 @@ public class regionbilagobjekt implements Serializable {
 
     public String getKlientsnavn() {
         return klientsnavn;
-    }
-
-    public String getgetreference_id() {
-        return getreference_id;
     }
 
     public void setKlientsnavn(String klientsnavn) {

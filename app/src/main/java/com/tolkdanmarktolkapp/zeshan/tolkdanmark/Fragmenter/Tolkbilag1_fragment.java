@@ -59,6 +59,10 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v == next) {
+            //Fragment Tolkbilag2fragment = new Tolkbilag2_fragment();
+            /*Bundle bundle = new Bundle();
+            bundle.putSerializable(key, value);
+            fragments.getTolkbilag2fragment().setArguments(bundle);*/
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag2fragment()).addToBackStack(fragments.getTolkbilag2fragment().getTag()).commit();
         }
     }

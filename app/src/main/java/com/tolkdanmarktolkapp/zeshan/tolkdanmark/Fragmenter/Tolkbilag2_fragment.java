@@ -26,9 +26,9 @@ import java.util.Objects;
 
 public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragment.OnDateRangeSelectedListener, Tidsvaelger_fragment.OnTimeRangeSelectedListener {
 
-    private Spinner tolkningtype, ydelsesomfang, ydelsestype;
-    private TextView textView1, textView2; //Slettes senere det er kun for at teste
-    private EditText dato, fratid, tiltid, sprog;
+    private Spinner spinnerForbindelse, spinnerOmfang, spinnerType;
+    private TextView forbindelseValue, omfangValue; //Slettes senere det er kun for at teste
+    private EditText dato, tidfra, tidtil, sprog;
     private boolean sluttidkun = false;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static JSONObject object;
@@ -40,20 +40,20 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         View rod = i.inflate(R.layout.tolkbilag2_view, container, false);
         next = (Button) rod.findViewById(R.id.next);
 
-        tolkningtype = (Spinner) rod.findViewById(R.id.spinnerTolkningtype);
-        ydelsesomfang = (Spinner) rod.findViewById(R.id.spinnerOmfang);
-        ydelsestype = (Spinner) rod.findViewById(R.id.spinnerType);
-        textView1 = (TextView) rod.findViewById(R.id.textView1); //Slettes senere, det er kun for at test
-        textView2 = (TextView) rod.findViewById(R.id.textView2); //Slettes senere, det er kun for at test
+        spinnerForbindelse = (Spinner) rod.findViewById(R.id.spinnerForbindelse);
+        spinnerOmfang = (Spinner) rod.findViewById(R.id.spinnerOmfang);
+        spinnerType = (Spinner) rod.findViewById(R.id.spinnerType);
+        forbindelseValue = (TextView) rod.findViewById(R.id.forbindelseValue); //Slettes senere, det er kun for at test
+        omfangValue = (TextView) rod.findViewById(R.id.omfangValue); //Slettes senere, det er kun for at test
         sprog = (EditText) rod.findViewById(R.id.Sprog);
         dato = (EditText) rod.findViewById(R.id.Dato);
-        fratid = (EditText) rod.findViewById(R.id.startTid);
-        tiltid = (EditText) rod.findViewById(R.id.slutTid);
+        tidfra = (EditText) rod.findViewById(R.id.startTid);
+        tidtil = (EditText) rod.findViewById(R.id.slutTid);
 
         try {
             dato.setText(object.getString("order_date"));
-            fratid.setText(object.getString("starttime"));
-            tiltid.setText(object.getString("endtime"));
+            tidfra.setText(object.getString("starttime"));
+            tidtil.setText(object.getString("endtime"));
             sprog.setText(object.getString("language"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,12 +89,12 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         final int[] val3 = {0, 1, 2, 3};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, tolkforbindelse);
-        tolkningtype.setAdapter(adapter);
-        tolkningtype.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinnerForbindelse.setAdapter(adapter);
+        spinnerForbindelse.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s1 = String.valueOf(val1[position]);
-                textView1.setText(s1); //Slettes senere, det er kun for at test
+                forbindelseValue.setText(s1); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -104,8 +104,8 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         });
 
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsensomfang);
-        ydelsesomfang.setAdapter(adapter1);
-        ydelsesomfang.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinnerOmfang.setAdapter(adapter1);
+        spinnerOmfang.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s2 = String.valueOf(val2[position]);
@@ -119,8 +119,8 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         });
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, ydelsenstype);
-        ydelsestype.setAdapter(adapter2);
-        ydelsestype.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinnerType.setAdapter(adapter2);
+        spinnerType.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 s3 = String.valueOf(val3[position]);
@@ -156,7 +156,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 }
             }
         });
-        fratid.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        tidfra.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
@@ -167,7 +167,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
             }
         });
 
-        tiltid.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        tidtil.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
@@ -185,76 +185,76 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
         String s4;
         if (Objects.equals(s2, "1") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[1]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "1") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[2]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "1") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[3]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "2") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[4]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "2") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[5]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "2") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[6]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "3") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[7]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "3") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[8]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "3") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[9]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "4") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[10]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "4") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[11]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "4") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[12]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "5") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[13]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "5") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[14]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "5") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[15]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "6") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[16]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "6") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[17]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "6") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[18]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "7") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[19]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "7") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[20]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "7") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[21]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "8") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[22]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "8") && Objects.equals(s3, "2")) {
             s4 = String.valueOf(val4[23]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         } else if (Objects.equals(s2, "8") && Objects.equals(s3, "3")) {
             s4 = String.valueOf(val4[24]);
-            textView2.setText(s4); //Slettes senere, det er kun for at test
+            omfangValue.setText(s4); //Slettes senere, det er kun for at test
         }
     }
 
@@ -291,10 +291,10 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
             min2 = ("0" + endMin);
         }
         if (!sluttidkun) {
-            fratid.setText(time1 + ":" + min1);
-            tiltid.setText(time2 + ":" + min2);
+            tidfra.setText(time1 + ":" + min1);
+            tidtil.setText(time2 + ":" + min2);
         } else {
-            tiltid.setText(time2 + ":" + min2);
+            tidtil.setText(time2 + ":" + min2);
         }
     }
 }

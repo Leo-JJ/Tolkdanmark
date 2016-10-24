@@ -25,7 +25,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
 
     private Spinner evaType1, evaType2, evaType3, evaType4;
     private EditText evaComment, laegeydernr;
-    private TextView textView1, textView2, textView3, textView4; // Slettes senere, det er kun for at teste
+    private TextView evaCounter1, evaCounter2, evaCounter3, evaCounter4; // Slettes senere, det er kun for at teste
     private Fragmentmanager fragments = new Fragmentmanager();
     private Button next;
     public static JSONObject object;
@@ -44,10 +44,10 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaComment = (EditText) rod.findViewById(R.id.evaComment);
 
         // Slettes senere, det er kun for at teste
-        textView1 = (TextView) rod.findViewById(R.id.textView1);
-        textView2 = (TextView) rod.findViewById(R.id.textView2);
-        textView3 = (TextView) rod.findViewById(R.id.textView3);
-        textView4 = (TextView) rod.findViewById(R.id.textView4);
+        evaCounter1 = (TextView) rod.findViewById(R.id.evaCounter1);
+        evaCounter2 = (TextView) rod.findViewById(R.id.evaCounter2);
+        evaCounter3 = (TextView) rod.findViewById(R.id.evaCounter3);
+        evaCounter4 = (TextView) rod.findViewById(R.id.evaCounter4);
 
         String[] eva1 = new String[]{
                 "God",
@@ -79,7 +79,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String s1 = String.valueOf(val1[position]);
-                textView1.setText(s1); //Slettes senere, det er kun for at test
+                evaCounter1.setText(s1); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -94,7 +94,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String s2 = String.valueOf(val2[position]);
-                textView2.setText(s2); //Slettes senere, det er kun for at test
+                evaCounter2.setText(s2); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -109,7 +109,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String s3 = String.valueOf(val3[position]);
-                textView3.setText(s3); //Slettes senere, det er kun for at test
+                evaCounter3.setText(s3); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -124,7 +124,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String s4 = String.valueOf(val4[position]);
-                textView4.setText(s4); //Slettes senere, det er kun for at test
+                evaCounter4.setText(s4); //Slettes senere, det er kun for at test
             }
 
             @Override

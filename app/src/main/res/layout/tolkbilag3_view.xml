@@ -129,7 +129,7 @@
                 android:textColor="#000000"/>
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/evaCounter1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -137,29 +137,30 @@
                 android:text="Counter" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/evaCounter2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView1"
+                android:layout_below="@+id/evaCounter1"
                 android:text="Counter" />
 
             <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView3"
-                android:layout_toStartOf="@+id/textView3"
-                android:text="Counter" />
-
-            <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/evaCounter3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/evaComment"
                 android:text="Counter" />
+
+            <TextView
+                android:id="@+id/evaCounter4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/evaCounter3"
+                android:layout_toStartOf="@+id/evaCounter3"
+                android:text="Counter" />
+
 
             <Button
                 android:id="@+id/next"

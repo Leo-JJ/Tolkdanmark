@@ -10,7 +10,9 @@ import android.widget.EditText;
 
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -34,16 +36,18 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
         cpr = (EditText) rod.findViewById(R.id.kCpr);
         tolk = (EditText) rod.findViewById(R.id.tNavn);
         tolkcpr = (EditText) rod.findViewById(R.id.tCpr);
-        postnr = (EditText) rod.findViewById(R.id.kPostnr);
         adresse = (EditText) rod.findViewById(R.id.kAdress);
+        postnr = (EditText) rod.findViewById(R.id.kPostnr);
         by = (EditText) rod.findViewById(R.id.kBy);
 
         try {
             klientsnavn.setText(object.getString("citizenName"));
             cpr.setText(object.getString("cpr"));
             tolk.setText(object.getString("interpreter_name"));
-            //tolkcpr.setText(object.getString("tolkcpr"));
+            tolkcpr.setText(object.getString("tolkcpr"));
             adresse.setText(object.getString("address"));
+            postnr.setText(object.getString("postcode"));
+            by.setText(object.getString("by"));
             //adresse.setText(object.getString("address").substring(0,object.getString("address").indexOf(",")));
             //postnr.setText(object.getString("address").substring(object.getString("address").indexOf(",")+1));
             //by.setText(object.getString("address").substring(object.getString("address").lastIndexOf(",")+7));
@@ -59,11 +63,32 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v == next) {
-            //Fragment Tolkbilag2fragment = new Tolkbilag2_fragment();
-            /*Bundle bundle = new Bundle();
-            bundle.putSerializable(key, value);
-            fragments.getTolkbilag2fragment().setArguments(bundle);*/
+
+            // Det her bliver tilføjet
+            regionbilagobjekt rb = null;
+            try {
+                rb = new regionbilagobjekt(object.getString("id").toString(),
+                        klientsnavn.getText().toString(),
+                        cpr.getText().toString(),
+                        null, null, null, null,
+                        tolk.getText().toString(),
+                        null,
+                        adresse.getText().toString(),
+                        postnr.getText().toString(),
+                        by.getText().toString(),
+                        tolkcpr.getText().toString(),
+                        null, null, null, null, null, null, null, null);
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("regionbilagindholdet", rb);
+            fragments.getTolkbilag2fragment().setArguments(bundle);
+
+            //Orginal
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag2fragment()).addToBackStack(fragments.getTolkbilag2fragment().getTag()).commit();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -16,7 +16,10 @@ import android.widget.Toast;
 
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.bilagobjekt;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.Objects;
 
@@ -30,6 +33,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
     private TextView forbindelseValue, omfangValue; //Slettes senere det er kun for at teste
     private EditText dato, tidfra, tidtil, sprog;
     private boolean sluttidkun = false;
+    private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static JSONObject object;
     private Button next = null;
@@ -143,7 +147,29 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 } else if (v == next && Objects.equals(s3, "0")) {
                     Toast.makeText(getActivity(), "Vælge venligst ydelsenstype", Toast.LENGTH_SHORT).show();
                 } else {
-                    getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
+                    // Det er bliver tilføjet.
+                    regionbilagobjekt rb = null;
+                    try {
+                        rb = new regionbilagobjekt(object.getString("id").toString(),
+                                null, null,
+                                sprog.getText().toString(),
+                                dato.getText().toString(),
+                                tidfra.getText().toString(),
+                                tidtil.getText().toString(),
+                                null,null,null,null,null,null,
+                                forbindelseValue.getText().toString(),
+                                omfangValue.getText().toString(),
+                                null,null,null,null,null,null);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("regionbilagindholdet", rb);
+                        fragments.getTolkbilag3fragment().setArguments(bundle);
+
+                        //Orginal
+                        getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -177,7 +203,9 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 }
             }
         });
-
+        if(getArguments() != null) {
+            regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
+        }
         return rod;
     }
 

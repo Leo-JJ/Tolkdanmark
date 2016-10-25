@@ -147,29 +147,19 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 } else if (v == next && Objects.equals(s3, "0")) {
                     Toast.makeText(getActivity(), "Vælge venligst ydelsenstype", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Det er bliver tilføjet.
-                    regionbilagobjekt rb = null;
-                    try {
-                        rb = new regionbilagobjekt(object.getString("id").toString(),
-                                null, null,
-                                sprog.getText().toString(),
-                                dato.getText().toString(),
-                                tidfra.getText().toString(),
-                                tidtil.getText().toString(),
-                                null,null,null,null,null,null,
-                                forbindelseValue.getText().toString(),
-                                omfangValue.getText().toString(),
-                                null,null,null,null,null,null);
 
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("regionbilagindholdet", rb);
-                        fragments.getTolkbilag3fragment().setArguments(bundle);
+                    regionbilagindholdet.setSprog(sprog.getText().toString());
+                    regionbilagindholdet.setDato(dato.getText().toString());
+                    regionbilagindholdet.setTidfra(tidfra.getText().toString());
+                    regionbilagindholdet.setTidtil(tidtil.getText().toString());
+                    regionbilagindholdet.setForbindelse(forbindelseValue.getText().toString());
+                    regionbilagindholdet.setOmfang(omfangValue.getText().toString());
 
-                        //Orginal
-                        getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
+                    fragments.getTolkbilag3fragment().setArguments(bundle);
+                    getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
+
                 }
             }
         });

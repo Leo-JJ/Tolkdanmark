@@ -70,14 +70,14 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
                 rb = new regionbilagobjekt(object.getString("id").toString(),
                         klientsnavn.getText().toString(),
                         cpr.getText().toString(),
-                        null, null, null, null,
+                        "", "", "", "",
                         tolk.getText().toString(),
-                        null,
+                        "",
                         adresse.getText().toString(),
                         postnr.getText().toString(),
                         by.getText().toString(),
                         tolkcpr.getText().toString(),
-                        null, null, null, null, null, null, null, null);
+                        "", "", "", "", "", "", "","");
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("regionbilagindholdet", rb);

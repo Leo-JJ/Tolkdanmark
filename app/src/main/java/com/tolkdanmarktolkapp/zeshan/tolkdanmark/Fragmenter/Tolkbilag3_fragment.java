@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
 import org.json.JSONObject;
 
@@ -27,6 +28,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     private EditText evaComment, laegeydernr;
     private TextView evaCounter1, evaCounter2, evaCounter3, evaCounter4; // Slettes senere, det er kun for at teste
     private Fragmentmanager fragments = new Fragmentmanager();
+    private regionbilagobjekt regionbilagindholdet;
     private Button next;
     public static JSONObject object;
 
@@ -139,6 +141,16 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View v) {
         if (v == next) {
+            regionbilagindholdet.setLaegeeanr(laegeydernr.getText().toString());
+            regionbilagindholdet.setEva1(evaCounter1.getText().toString());
+            regionbilagindholdet.setEva2(evaCounter2.getText().toString());
+            regionbilagindholdet.setEva3(evaCounter3.getText().toString());
+            regionbilagindholdet.setEva4(evaCounter4.getText().toString());
+            regionbilagindholdet.setEva5(evaComment.getText().toString());
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
+            fragments.getLaegeunderskriftfragment().setArguments(bundle);
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getLaegeunderskriftfragment()).addToBackStack(fragments.getLaegeunderskriftfragment().getTag()).commit();
         }
     }

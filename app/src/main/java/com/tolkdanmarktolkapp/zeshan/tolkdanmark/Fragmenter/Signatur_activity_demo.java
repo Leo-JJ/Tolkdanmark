@@ -39,6 +39,7 @@ public class Signatur_activity_demo extends Fragment {
         private bilagobjekt bilagindholdet;
         private Fragmentmanager fragments = new Fragmentmanager();
         public static boolean bilagsendt = false;
+        private boolean signedCheck = false;
 
         @Override
         public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -53,12 +54,14 @@ public class Signatur_activity_demo extends Fragment {
 
                 @Override
                 public void onSigned() {
+                    signedCheck = true;
                     mSaveButton.setEnabled(true);
                     mClearButton.setEnabled(true);
                 }
 
                 @Override
                 public void onClear() {
+                    signedCheck = false;
                     mSaveButton.setEnabled(false);
                     mClearButton.setEnabled(false);
                 }
@@ -71,18 +74,22 @@ public class Signatur_activity_demo extends Fragment {
                 @Override
                 public void onClick(View view) {
                     mSignaturePad.clear();
+                    Toast.makeText(getActivity(), "Underskriv igen i det gråe felt", Toast.LENGTH_SHORT).show();
                 }
             });
 
             mSaveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
-                    if (addSignatureToGallery(signatureBitmap)) {
+                    if(signedCheck) {
+                        Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
+                        if (addSignatureToGallery(signatureBitmap)) {
 
+                        }
+                        getFragmentManager().beginTransaction().replace(R.id.container, fragments.getVelkommenfragment()).addToBackStack(fragments.getVelkommenfragment().getTag()).commit();
+                    }else{
+                        Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det gråe felt ", Toast.LENGTH_SHORT).show();
                     }
-                    getFragmentManager().beginTransaction().replace(R.id.container, fragments.getVelkommenfragment()).addToBackStack(fragments.getVelkommenfragment().getTag()).commit();
-
                 }
             });
 

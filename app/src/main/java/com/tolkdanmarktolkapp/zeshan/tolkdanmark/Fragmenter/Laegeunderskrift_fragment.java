@@ -41,6 +41,7 @@ public class Laegeunderskrift_fragment extends Fragment {
     private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
+    private boolean signedCheck = false;
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -56,12 +57,14 @@ public class Laegeunderskrift_fragment extends Fragment {
 
             @Override
             public void onSigned() {
+                signedCheck = true;
                 mSaveButton.setEnabled(true);
                 mClearButton.setEnabled(true);
             }
 
             @Override
             public void onClear() {
+                signedCheck = false;
                 mSaveButton.setEnabled(false);
                 mClearButton.setEnabled(false);
             }
@@ -74,28 +77,35 @@ public class Laegeunderskrift_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mSignaturePad.clear();
+                Toast.makeText(getActivity(), "Underskriv igen i det gråe felt", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
-                if (addSignatureToGallery(signatureBitmap)) {
-                    if (Laegeunderskrift_fragment.bilagsendt) {
-                        Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getActivity(), "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
+                if (signedCheck) {
+                    Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
+                    if (addSignatureToGallery(signatureBitmap)) {
+                        if (Laegeunderskrift_fragment.bilagsendt) {
+                            Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getActivity(), "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
+                        }
+
                     }
-
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
+                    fragments.getTolkensunderskriftfragment().setArguments(bundle);
+                    getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkensunderskriftfragment()).addToBackStack(fragments.getTolkensunderskriftfragment().getTag()).commit();
+                } else {
+                    Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det gråe felt ", Toast.LENGTH_SHORT).show();
                 }
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
-                fragments.getTolkensunderskriftfragment().setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkensunderskriftfragment()).addToBackStack(fragments.getTolkensunderskriftfragment().getTag()).commit();
-
             }
+
         });
+
 
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(

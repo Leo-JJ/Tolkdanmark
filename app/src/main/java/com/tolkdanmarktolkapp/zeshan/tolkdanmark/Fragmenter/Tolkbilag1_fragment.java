@@ -24,7 +24,6 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     private Button next = null;
     private EditText klientsnavn, cpr, adresse, tolk, tolkcpr, postnr, by;
     public static JSONObject object;
-    private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {

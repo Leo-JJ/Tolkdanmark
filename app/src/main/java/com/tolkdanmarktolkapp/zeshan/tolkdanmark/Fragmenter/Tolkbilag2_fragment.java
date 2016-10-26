@@ -193,9 +193,11 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 }
             }
         });
+
         if(getArguments() != null) {
             regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
+
         return rod;
     }
 

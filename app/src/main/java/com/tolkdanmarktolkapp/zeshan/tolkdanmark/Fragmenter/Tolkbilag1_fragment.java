@@ -24,6 +24,7 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     private Button next = null;
     private EditText klientsnavn, cpr, adresse, tolk, tolkcpr, postnr, by;
     public static JSONObject object;
+    private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -64,7 +65,6 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         if (v == next) {
 
-            // Det her bliver tilføjet
             regionbilagobjekt rb = null;
             try {
                 rb = new regionbilagobjekt(object.getString("id").toString(),
@@ -72,18 +72,16 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
                         cpr.getText().toString(),
                         "", "", "", "",
                         tolk.getText().toString(),
-                        "",
+                        object.getString("reference_id"),
                         adresse.getText().toString(),
                         postnr.getText().toString(),
                         by.getText().toString(),
                         tolkcpr.getText().toString(),
-                        "", "", "", "", "", "", "","");
+                        "", "", "", "", "", "", "", "");
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("regionbilagindholdet", rb);
             fragments.getTolkbilag2fragment().setArguments(bundle);
-
-            //Orginal
             getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag2fragment()).addToBackStack(fragments.getTolkbilag2fragment().getTag()).commit();
 
             } catch (JSONException e) {

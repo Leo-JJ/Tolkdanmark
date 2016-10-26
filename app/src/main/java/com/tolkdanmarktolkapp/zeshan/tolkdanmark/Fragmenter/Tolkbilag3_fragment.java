@@ -44,6 +44,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType4 = (Spinner) rod.findViewById(R.id.evaType4);
 
         evaComment = (EditText) rod.findViewById(R.id.evaComment);
+        laegeydernr = (EditText) rod.findViewById(R.id.laegeydernr);
 
         // Slettes senere, det er kun for at teste
         evaCounter1 = (TextView) rod.findViewById(R.id.evaCounter1);
@@ -135,18 +136,23 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             }
         });
 
+        if(getArguments() != null) {
+            regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
+        }
+
         return rod;
     }
 
     @Override
     public void onClick(View v) {
         if (v == next) {
+
             regionbilagindholdet.setLaegeeanr(laegeydernr.getText().toString());
             regionbilagindholdet.setEva1(evaCounter1.getText().toString());
             regionbilagindholdet.setEva2(evaCounter2.getText().toString());
             regionbilagindholdet.setEva3(evaCounter3.getText().toString());
             regionbilagindholdet.setEva4(evaCounter4.getText().toString());
-            regionbilagindholdet.setEva5(evaComment.getText().toString());
+            regionbilagindholdet.setEvaComment(evaComment.getText().toString());
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);

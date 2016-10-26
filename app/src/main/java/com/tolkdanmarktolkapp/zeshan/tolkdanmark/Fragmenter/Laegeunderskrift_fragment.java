@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,7 +38,7 @@ public class Laegeunderskrift_fragment extends Fragment {
     private ImageButton mSaveButton;
     //private Excelbilag_logik excel = new Excelbilag_logik();
     private Uri contentUri;
-    //private bilagobjekt bilagindholdet;
+    private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
 
@@ -88,6 +89,9 @@ public class Laegeunderskrift_fragment extends Fragment {
                     }
 
                 }
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
+                fragments.getTolkensunderskriftfragment().setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkensunderskriftfragment()).addToBackStack(fragments.getTolkensunderskriftfragment().getTag()).commit();
 
             }
@@ -101,7 +105,7 @@ public class Laegeunderskrift_fragment extends Fragment {
         }
 
         if (getArguments() != null) {
-            //bilagindholdet = (bilagobjekt) getArguments().getSerializable("bilagindholdet");
+            regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
         return rod;
     }

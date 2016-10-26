@@ -6,9 +6,9 @@ import java.io.StringReader;
 
 public class regionbilagobjekt implements Serializable {
 
-    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", eva5 = "";
+    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "";
 
-    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String eva5) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;
@@ -29,7 +29,7 @@ public class regionbilagobjekt implements Serializable {
         this.eva2 = eva2;
         this.eva3 = eva3;
         this.eva4 = eva4;
-        this.eva5 = eva5;
+        this.evaComment = evaComment;
     }
 
     public String getId() {
@@ -192,11 +192,11 @@ public class regionbilagobjekt implements Serializable {
         this.eva4 = eva4;
     }
 
-    public String getEva5() {
-        return eva5;
+    public String getEvaComment() {
+        return evaComment;
     }
 
-    public void setEva5(String eva5) {
-        this.eva5 = eva5;
+    public void setEvaComment(String evaComment) {
+        this.evaComment = evaComment;
     }
 }

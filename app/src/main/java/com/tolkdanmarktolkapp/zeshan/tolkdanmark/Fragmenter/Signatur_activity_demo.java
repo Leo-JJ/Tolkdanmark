@@ -39,7 +39,7 @@ public class Signatur_activity_demo extends Fragment {
         private bilagobjekt bilagindholdet;
         private Fragmentmanager fragments = new Fragmentmanager();
         public static boolean bilagsendt = false;
-        private boolean signedCheck = false;
+        private boolean emptyPad = false;
 
         @Override
         public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -54,14 +54,14 @@ public class Signatur_activity_demo extends Fragment {
 
                 @Override
                 public void onSigned() {
-                    signedCheck = true;
+                    emptyPad = true;
                     mSaveButton.setEnabled(true);
                     mClearButton.setEnabled(true);
                 }
 
                 @Override
                 public void onClear() {
-                    signedCheck = false;
+                    emptyPad = false;
                     mSaveButton.setEnabled(false);
                     mClearButton.setEnabled(false);
                 }
@@ -81,7 +81,7 @@ public class Signatur_activity_demo extends Fragment {
             mSaveButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(signedCheck) {
+                    if(emptyPad) {
                         Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                         if (addSignatureToGallery(signatureBitmap)) {
 

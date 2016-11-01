@@ -147,7 +147,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                 } else if (v == next && Objects.equals(s3, "0")) {
                     Toast.makeText(getActivity(), "Vælge venligst ydelsenstype", Toast.LENGTH_SHORT).show();
                 } else {
-
                     regionbilagindholdet.setSprog(sprog.getText().toString());
                     regionbilagindholdet.setDato(dato.getText().toString());
                     regionbilagindholdet.setTidfra(tidfra.getText().toString());
@@ -159,7 +158,6 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                     bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
                     fragments.getTolkbilag3fragment().setArguments(bundle);
                     getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag3fragment()).addToBackStack(fragments.getTolkbilag3fragment().getTag()).commit();
-
                 }
             }
         });

@@ -43,7 +43,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
     private regionbilagobjekt regionbilagindholdet;
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
-    private boolean signedCheck = false;
+    private boolean emptyPad = false;
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -59,14 +59,14 @@ public class Tolkensunderskrift_fragment extends Fragment {
 
             @Override
             public void onSigned() {
-                signedCheck = true;
+                emptyPad = true;
                 mSaveButton.setEnabled(true);
                 mClearButton.setEnabled(true);
             }
 
             @Override
             public void onClear() {
-                signedCheck = false;
+                emptyPad = false;
                 mSaveButton.setEnabled(false);
                 mClearButton.setEnabled(false);
             }
@@ -86,7 +86,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (signedCheck) {
+                if (emptyPad) {
                     Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                     if (addSignatureToGallery(signatureBitmap)) {
                         if (Laegeunderskrift_fragment.bilagsendt) {
@@ -94,7 +94,6 @@ public class Tolkensunderskrift_fragment extends Fragment {
                         } else {
                             Toast.makeText(getActivity(), "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
                         }
-
                     }
                     getFragmentManager().beginTransaction().replace(R.id.container, fragments.getVelkommenfragment()).addToBackStack(fragments.getVelkommenfragment().getTag()).commit();
                 } else {

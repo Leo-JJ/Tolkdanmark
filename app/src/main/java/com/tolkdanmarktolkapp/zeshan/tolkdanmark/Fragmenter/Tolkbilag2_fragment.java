@@ -37,7 +37,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
     private Fragmentmanager fragments = new Fragmentmanager();
     public static JSONObject object;
     private Button next = null;
-    private String s1, s2, s3;
+    private String s1, s2, s3, s4;
     private int[] val4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -151,8 +151,10 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
                     regionbilagindholdet.setDato(dato.getText().toString());
                     regionbilagindholdet.setTidfra(tidfra.getText().toString());
                     regionbilagindholdet.setTidtil(tidtil.getText().toString());
-                    regionbilagindholdet.setForbindelse(forbindelseValue.getText().toString());
-                    regionbilagindholdet.setOmfang(omfangValue.getText().toString());
+                    regionbilagindholdet.setForbindelse(s1);
+                    //regionbilagindholdet.setForbindelse(forbindelseValue.getText().toString());
+                    regionbilagindholdet.setOmfang(s4);
+                    //regionbilagindholdet.setOmfang(omfangValue.getText().toString());
 
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
@@ -200,7 +202,7 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
     }
 
     public void valueUpdate() {
-        String s4;
+        //String s4;
         if (Objects.equals(s2, "1") && Objects.equals(s3, "1")) {
             s4 = String.valueOf(val4[1]);
             omfangValue.setText(s4); //Slettes senere, det er kun for at test

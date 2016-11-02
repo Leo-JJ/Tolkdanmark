@@ -16,6 +16,7 @@ import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -29,6 +30,7 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     private TextView evaCounter1, evaCounter2, evaCounter3, evaCounter4; // Slettes senere, det er kun for at teste
     private Fragmentmanager fragments = new Fragmentmanager();
     private regionbilagobjekt regionbilagindholdet;
+    private String e1, e2, e3, e4;
     private Button next;
     public static JSONObject object;
 
@@ -51,6 +53,13 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaCounter2 = (TextView) rod.findViewById(R.id.evaCounter2);
         evaCounter3 = (TextView) rod.findViewById(R.id.evaCounter3);
         evaCounter4 = (TextView) rod.findViewById(R.id.evaCounter4);
+
+        try {
+            laegeydernr.setText(object.getString(""));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        evaComment.setText("");
 
         String[] eva1 = new String[]{
                 "God",
@@ -81,8 +90,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String s1 = String.valueOf(val1[position]);
-                evaCounter1.setText(s1); //Slettes senere, det er kun for at test
+                e1 = String.valueOf(val1[position]);
+                evaCounter1.setText(e1); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -96,8 +105,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String s2 = String.valueOf(val2[position]);
-                evaCounter2.setText(s2); //Slettes senere, det er kun for at test
+                e2 = String.valueOf(val2[position]);
+                evaCounter2.setText(e2); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -111,8 +120,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String s3 = String.valueOf(val3[position]);
-                evaCounter3.setText(s3); //Slettes senere, det er kun for at test
+                e3 = String.valueOf(val3[position]);
+                evaCounter3.setText(e3); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -126,8 +135,8 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaType4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String s4 = String.valueOf(val4[position]);
-                evaCounter4.setText(s4); //Slettes senere, det er kun for at test
+                e4 = String.valueOf(val4[position]);
+                evaCounter4.setText(e4); //Slettes senere, det er kun for at test
             }
 
             @Override
@@ -148,10 +157,10 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         if (v == next) {
 
             regionbilagindholdet.setLaegeeanr(laegeydernr.getText().toString());
-            regionbilagindholdet.setEva1(evaCounter1.getText().toString());
-            regionbilagindholdet.setEva2(evaCounter2.getText().toString());
-            regionbilagindholdet.setEva3(evaCounter3.getText().toString());
-            regionbilagindholdet.setEva4(evaCounter4.getText().toString());
+            regionbilagindholdet.setEva1(e1);
+            regionbilagindholdet.setEva2(e2);
+            regionbilagindholdet.setEva3(e3);
+            regionbilagindholdet.setEva4(e4);
             regionbilagindholdet.setEvaComment(evaComment.getText().toString());
 
             Bundle bundle = new Bundle();

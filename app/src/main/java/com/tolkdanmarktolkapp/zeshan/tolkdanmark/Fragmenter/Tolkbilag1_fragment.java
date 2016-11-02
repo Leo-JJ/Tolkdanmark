@@ -46,7 +46,7 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
             tolk.setText(object.getString("interpreter_name"));
             tolkcpr.setText(object.getString("tolkcpr"));
             adresse.setText(object.getString("address"));
-            postnr.setText(object.getString("postcode"));
+            postnr.setText(object.getString("postCode"));
             by.setText(object.getString("by"));
             //adresse.setText(object.getString("address").substring(0,object.getString("address").indexOf(",")));
             //postnr.setText(object.getString("address").substring(object.getString("address").indexOf(",")+1));
@@ -66,7 +66,7 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
 
             regionbilagobjekt rb = null;
             try {
-                rb = new regionbilagobjekt(object.getString("id").toString(),
+                rb = new regionbilagobjekt(object.getString("id"),
                         klientsnavn.getText().toString(),
                         cpr.getText().toString(),
                         "", "", "", "",

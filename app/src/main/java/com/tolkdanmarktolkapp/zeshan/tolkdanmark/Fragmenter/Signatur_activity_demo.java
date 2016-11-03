@@ -74,7 +74,7 @@ public class Signatur_activity_demo extends Fragment {
                 @Override
                 public void onClick(View view) {
                     mSignaturePad.clear();
-                    Toast.makeText(getActivity(), "Underskriv igen i det gråe felt", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Underskriv igen i det grå felt", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -88,7 +88,7 @@ public class Signatur_activity_demo extends Fragment {
                         }
                         getFragmentManager().beginTransaction().replace(R.id.container, fragments.getVelkommenfragment()).addToBackStack(fragments.getVelkommenfragment().getTag()).commit();
                     }else{
-                        Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det gråe felt ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det grå felt", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

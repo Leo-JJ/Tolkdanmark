@@ -77,7 +77,7 @@ public class Laegeunderskrift_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mSignaturePad.clear();
-                Toast.makeText(getActivity(), "Underskriv igen i det gråe felt", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Underskriv igen i det grå felt", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -88,18 +88,18 @@ public class Laegeunderskrift_fragment extends Fragment {
                 if (emptyPad) {
                     Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                     if (addSignatureToGallery(signatureBitmap)) {
-                        if (Laegeunderskrift_fragment.bilagsendt) {
+                        /*if (Laegeunderskrift_fragment.bilagsendt) {
                             Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(getActivity(), "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
-                        }
+                        }*/
                     }
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("regionbilagindholdet", regionbilagindholdet);
                     fragments.getTolkensunderskriftfragment().setArguments(bundle);
                     getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkensunderskriftfragment()).addToBackStack(fragments.getTolkensunderskriftfragment().getTag()).commit();
                 } else {
-                    Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det gråe felt ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Ingen Underskrift! Underskriv i det grå felt ", Toast.LENGTH_SHORT).show();
                 }
             }
 

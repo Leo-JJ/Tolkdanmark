@@ -18,7 +18,7 @@
     <string name="tolks_cpr">Tolks CPR</string>
     <string name="klientens_navn">Klientens navn</string>
     <string name="next">Næste</string>
-    <string name="laegens_ydernummer">Lægens ydernummer</string>
+    <string name="laegens_ydernummer">Lægens ydernr</string>
     <string name="udfyldes_af_tolk">UDFYLDES AF TOLK</string>
     <string name="dato">Dato</string>
 </resources>

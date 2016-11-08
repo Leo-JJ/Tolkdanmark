@@ -8,8 +8,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         android:text="UDFYLDES AF LÆGE"
         android:textColor="@android:color/black"
         android:textStyle="bold" />
@@ -29,11 +31,15 @@
                 android:id="@+id/laegeydernr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView1"
                 android:layout_alignEnd="@+id/evaType1"
-                android:layout_alignParentStart="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/evaText1"
+                android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
                 android:hint="@string/laegens_ydernummer"
+                android:padding="12dp"
                 android:textColor="#000000" />
 
             <EditText
@@ -42,8 +48,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/laegeydernr"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:padding="10dp"
                 android:text="Kommunikaion mellem tolk og patient:" />
 
             <Spinner
@@ -53,7 +62,10 @@
                 android:layout_alignBottom="@+id/evaText1"
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/evaText1"
-                android:layout_toEndOf="@+id/evaText2" />
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/evaText2"
+                android:background="@drawable/group_row"
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/evaText2"
@@ -61,8 +73,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/evaText1"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:padding="10dp"
                 android:text="Kommunikation mellem rekvirent og tolk:" />
 
             <Spinner
@@ -72,7 +87,10 @@
                 android:layout_alignBottom="@+id/evaText2"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/evaText1"
-                android:layout_toEndOf="@+id/evaText2" />
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/evaText2"
+                android:background="@drawable/group_row"
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/evaText3"
@@ -80,8 +98,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/evaText2"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:padding="10dp"
                 android:text="Vil du anvende tolken igen:" />
 
             <Spinner
@@ -91,7 +112,10 @@
                 android:layout_alignBottom="@+id/evaText3"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/evaType2"
-                android:layout_toEndOf="@+id/evaText2" />
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/evaText2"
+                android:background="@drawable/group_row"
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/evaText4"
@@ -99,8 +123,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/evaText3"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:padding="10dp"
                 android:text="Kom tolken til tiden:" />
 
             <Spinner
@@ -110,7 +137,10 @@
                 android:layout_alignBottom="@+id/evaText4"
                 android:layout_alignEnd="@+id/evaType2"
                 android:layout_below="@+id/evaType3"
-                android:layout_toEndOf="@+id/evaText3" />
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/evaText3"
+                android:background="@drawable/group_row"
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/evaComment"
@@ -126,7 +156,7 @@
                 android:lines="5"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/evaCounter1"
@@ -172,6 +202,20 @@
                 android:background="@drawable/kanter"
                 android:text="Tryk her for at underskriv"
                 android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/laegeydernr"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Lægens Ydernummer:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
         </RelativeLayout>
     </ScrollView>
 

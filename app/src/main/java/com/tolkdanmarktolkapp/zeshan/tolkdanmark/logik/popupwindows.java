@@ -412,6 +412,8 @@ public class popupwindows {
                                     + "Navn: " + object.getString("bestilaf") + "\n"
                                     + "Institution: " + object.getString("institute") + "\n"
                                     + "Adresse: " + object.getString("address") + "\n"
+                                    + "Postnr: " + object.getString("postCode") + "\n"
+                                    + "By: " + object.getString("city") + "\n"
 
 
                             , activity);

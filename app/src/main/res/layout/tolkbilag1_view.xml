@@ -9,156 +9,263 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:gravity="center"
         android:text="@string/udfyldes_af_tolk"
         android:textColor="#000000"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true" />
 
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:fillViewport="true">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:fillViewport="true">
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/Seanydenr"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView2"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/tolkebureauets_yder_nr_ean_nr"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/Seanydenr"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/tolkebureauets_yder_nr_ean_nr"
-                    android:inputType="number"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/tNavn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/Seanydenr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView2"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/udfoerendes_tolks_navn"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/tNavn"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignEnd="@+id/Seanydenr"
-                    android:layout_alignStart="@+id/Seanydenr"
-                    android:layout_below="@+id/Seanydenr"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/udfoerendes_tolks_navn"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/kBy"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/kPostnr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView7"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/by"
+                android:inputType="none"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/kBy"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/kPostnr"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/by"
-                    android:inputType="none"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/kPostnr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/kAddress"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView6"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/post_nr"
+                android:inputType="number"
+                android:maxLength="5"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/kPostnr"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/kAdress"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/post_nr"
-                    android:inputType="number"
-                    android:maxLength="5"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/kAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/kCpr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView5"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/adresse"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/kAdress"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/kCpr"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/adresse"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/kCpr"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/kNavn"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView4"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:enabled="false"
+                android:hint="@string/klientens_cpr_nr"
+                android:inputType="number"
+                android:maxLength="11"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/kCpr"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/kNavn"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:enabled="false"
-                    android:hint="@string/klientens_cpr_nr"
-                    android:inputType="number"
-                    android:maxLength="11"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/tCpr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/tNavn"
+                android:layout_below="@+id/tNavn"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
+                android:editable="false"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="@string/tolks_cpr"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/tCpr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/tNavn"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:editable="false"
-                    android:ems="10"
-                    android:enabled="false"
-                    android:hint="@string/tolks_cpr"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <EditText
+                android:id="@+id/kNavn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tCpr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toEndOf="@+id/textView3"
+                android:background="@drawable/group_row"
+                android:hint="@string/klientens_navn"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/kNavn"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/tCpr"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/group_row"
-                    android:hint="@string/klientens_navn"
-                    android:inputType="text"
-                    android:padding="10dp"
-                    android:textColor="#000000" />
+            <Button
+                android:id="@+id/next"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/kanter"
+                android:padding="10dp"
+                android:text="@string/next"
+                android:textColor="#000000" />
 
-                <Button
-                    android:id="@+id/next"
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/kanter"
-                    android:padding="10dp"
-                    android:text="@string/next"
-                    android:textColor="#000000"
-                    android:layout_alignParentBottom="true"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tNavn"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/Seanydenr"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Tolks navn:       "
+                android:textColor="#000000"
+                android:textSize="18dp" />
 
-            </RelativeLayout>
-        </ScrollView>
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/kNavn"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tNavn"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/tCpr"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Tolks CPR:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/kCpr"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tCpr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/kNavn"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Klientens navn:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/kAddress"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kNavn"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/kCpr"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Klientens CPR: "
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/kPostnr"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kCpr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/kAddress"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Adresse:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/kBy"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kAddress"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/kPostnr"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="Post Nr:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/kBy"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/kPostnr"
+                android:layout_gravity="center_horizontal"
+                android:layout_toStartOf="@+id/kBy"
+                android:background="@drawable/group_row"
+                android:padding="10dp"
+                android:text="By:"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

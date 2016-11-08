@@ -48,6 +48,12 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaComment = (EditText) rod.findViewById(R.id.evaComment);
         laegeydernr = (EditText) rod.findViewById(R.id.laegeydernr);
 
+        try {
+            laegeydernr.setText(object.getString("provider"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         // Slettes senere, det er kun for at teste
         evaCounter1 = (TextView) rod.findViewById(R.id.evaCounter1);
         evaCounter2 = (TextView) rod.findViewById(R.id.evaCounter2);

@@ -19,8 +19,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:editable="false"
+        android:gravity="center"
         android:text="UDFYLDES AF TOLK"
         android:textColor="@android:color/black"
         android:textStyle="bold" />
@@ -31,11 +34,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/group_row"
         android:editable="false"
         android:ems="10"
         android:focusable="false"
-        android:text="Tolkning i forbindelse med:"
-        android:inputType="none"/>
+        android:inputType="none"
+        android:padding="10dp"
+        android:text="Tolkning i forbindelse med:" />
 
     <Spinner
         android:id="@+id/spinnerOmfang"
@@ -43,8 +49,11 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/omfangText"
         android:layout_below="@+id/spinnerForbindelse"
+        android:layout_gravity="center_horizontal"
         android:layout_toEndOf="@+id/typeText"
-        android:editable="false" />
+        android:background="@drawable/group_row"
+        android:editable="false"
+        android:padding="10dp" />
 
     <Spinner
         android:id="@+id/spinnerForbindelse"
@@ -52,8 +61,11 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/forbindelseText"
         android:layout_alignTop="@+id/forbindelseText"
+        android:layout_gravity="center_horizontal"
         android:layout_toEndOf="@+id/forbindelseText"
-        android:editable="false" />
+        android:background="@drawable/group_row"
+        android:editable="false"
+        android:padding="10dp" />
 
     <TextView
         android:id="@+id/forbindelseValue"
@@ -77,10 +89,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/spinnerOmfang"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/group_row"
         android:editable="false"
+        android:ems="10"
         android:focusable="false"
         android:inputType="none"
-        android:ems="10"
+        android:padding="10dp"
         android:text="Ydelsens type:" />
 
     <Spinner
@@ -89,20 +104,26 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/typeText"
         android:layout_below="@+id/spinnerOmfang"
-        android:layout_toEndOf="@+id/typeText" />
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/typeText"
+        android:background="@drawable/group_row"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/Dato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/typeText"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/typeText"
+        android:background="@drawable/group_row"
         android:editable="false"
-        android:inputType="date"
         android:ems="10"
         android:enabled="false"
         android:hint="@string/dato"
+        android:inputType="date"
+        android:padding="15dp"
         android:textColor="#000000" />
 
     <EditText
@@ -110,50 +131,123 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/Dato"
         android:layout_below="@+id/Dato"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/textView1"
+        android:background="@drawable/group_row"
         android:editable="false"
         android:ems="10"
-        android:hint="Ydelsen Start Tid *"
+        android:hint="Ydelsen Start Tid"
+        android:padding="15dp"
         android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/omfangText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/forbindelseText"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/group_row"
+        android:editable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:padding="10dp"
+        android:text="Ydelsens omfang:" />
+
+    <EditText
+        android:id="@+id/slutTid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/startTid"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/textView2"
+        android:background="@drawable/group_row"
+        android:editable="false"
+        android:ems="10"
+        android:hint="Ydelsen Slut Tid"
+        android:padding="15dp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startTid"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/typeText"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/spinnerType"
+        android:background="@drawable/group_row"
+        android:padding="10dp"
+        android:text="Dato:"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/slutTid"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/startTid"
+        android:background="@drawable/group_row"
+        android:padding="10dp"
+        android:text="Start tid:"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Sprog"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/startTid"
+        android:background="@drawable/group_row"
+        android:padding="10dp"
+        android:text="Slut tid:"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Sprog"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/slutTid"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/Sprog"
+        android:background="@drawable/group_row"
+        android:padding="10dp"
+        android:text="Sprog:"
+        android:textColor="#000000"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/Sprog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/slutTid"
-        android:inputType="text"
+        android:layout_gravity="center_horizontal"
+        android:layout_toEndOf="@+id/textView3"
+        android:background="@drawable/group_row"
         android:editable="false"
         android:ems="10"
         android:enabled="false"
         android:focusable="false"
         android:hint="Sprog"
-        android:textColor="#000000"/>
-
-    <EditText
-        android:id="@+id/omfangText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:editable="false"
-        android:ems="10"
-        android:focusable="false"
-        android:text="Ydelsens omfang:"
-        android:inputType="none"
-        android:layout_below="@+id/forbindelseText"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/slutTid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:editable="false"
-        android:ems="10"
-        android:hint="Ydelsen Slut Tid *"
-        android:textColor="#000000"
-        android:layout_below="@+id/startTid"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColor="#000000" />
 
 </RelativeLayout>

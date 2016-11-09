@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/kanter"
+        android:background="@drawable/group_row"
         android:padding="10dp"
         android:text="Næste"
         android:textColor="#000000" />

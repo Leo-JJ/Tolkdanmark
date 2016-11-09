@@ -73,7 +73,7 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
                         postnr.getText().toString(),
                         by.getText().toString(),
                         tolkcpr.getText().toString(),
-                        "", "", "", "", "", "", "", "");
+                        "", "", "", "", "", "", "", "", "");
 
             Bundle bundle = new Bundle();
             bundle.putSerializable("regionbilagindholdet", rb);

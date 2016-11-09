@@ -1,6 +1,7 @@
 package com.tolkdanmarktolkapp.zeshan.tolkdanmark.Fragmenter;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -11,6 +12,7 @@ import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +25,13 @@ import com.tolkdanmarktolkapp.zeshan.tolkdanmark.R;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.Fragmentmanager;
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+
+import static com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.DB_logik.getScaledBitmap;
 
 /**
  * Created by Jiahua on 27-09-2016.
@@ -42,6 +47,8 @@ public class Laegeunderskrift_fragment extends Fragment {
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
     private boolean emptyPad = false;
+    private String encodedImage;
+
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
@@ -88,6 +95,7 @@ public class Laegeunderskrift_fragment extends Fragment {
                 if (emptyPad) {
                     Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                     if (addSignatureToGallery(signatureBitmap)) {
+                        regionbilagindholdet.setEnCodedImage(encodedImage);
                         /*if (Laegeunderskrift_fragment.bilagsendt) {
                             Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
                         } else {
@@ -150,6 +158,15 @@ public class Laegeunderskrift_fragment extends Fragment {
             mediaScanIntent.setData(contentUri);
             getActivity().sendBroadcast(mediaScanIntent);
             result = true;
+
+            Bitmap bm = null;
+            bm = getScaledBitmap(photo.toString(), 343, 355);
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bm.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+            byte[] b = baos.toByteArray();
+            encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+
             //excel.savetoexcel(photo,getContext(),bilagindholdet);
         } catch (Exception e) {
             e.printStackTrace();

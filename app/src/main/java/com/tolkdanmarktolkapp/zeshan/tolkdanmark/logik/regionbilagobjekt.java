@@ -6,9 +6,9 @@ import java.io.StringReader;
 
 public class regionbilagobjekt implements Serializable {
 
-    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "";
+    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "", enCodedImage = "";
 
-    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment, String enCodedImage) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;
@@ -30,6 +30,7 @@ public class regionbilagobjekt implements Serializable {
         this.eva3 = eva3;
         this.eva4 = eva4;
         this.evaComment = evaComment;
+        this.enCodedImage = enCodedImage;
     }
 
     public String getId() {
@@ -198,5 +199,13 @@ public class regionbilagobjekt implements Serializable {
 
     public void setEvaComment(String evaComment) {
         this.evaComment = evaComment;
+    }
+
+    public String getEnCodedImage(){
+        return enCodedImage;
+    }
+
+    public void setEnCodedImage(String enCodedImage){
+        this.enCodedImage = enCodedImage;
     }
 }

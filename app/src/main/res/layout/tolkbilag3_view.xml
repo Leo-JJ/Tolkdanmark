@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="UDFYLDES AF LÆGE"
-        android:textColor="@android:color/black"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <ScrollView
@@ -37,8 +37,8 @@
                 android:layout_toEndOf="@+id/evaText1"
                 android:background="@drawable/group_row"
                 android:editable="false"
-                android:enabled="false"
                 android:ems="10"
+                android:enabled="false"
                 android:hint="@string/laegens_ydernummer"
                 android:padding="12dp"
                 android:textColor="#000000" />
@@ -53,8 +53,10 @@
                 android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:padding="10dp"
-                android:text="Kommunikaion mellem tolk og patient:" />
+                android:text="Kommunikaion mellem tolk og patient:"
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/evaType1"
@@ -78,8 +80,10 @@
                 android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:padding="10dp"
-                android:text="Kommunikation mellem rekvirent og tolk:" />
+                android:text="Kommunikation mellem rekvirent og tolk:"
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/evaType2"
@@ -103,8 +107,10 @@
                 android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:padding="10dp"
-                android:text="Vil du anvende tolken igen:" />
+                android:text="Vil du anvende tolken igen:"
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/evaType3"
@@ -128,8 +134,10 @@
                 android:background="@drawable/group_row"
                 android:editable="false"
                 android:ems="10"
+                android:enabled="false"
                 android:padding="10dp"
-                android:text="Kom tolken til tiden:" />
+                android:text="Kom tolken til tiden:"
+                android:textColor="#000000" />
 
             <Spinner
                 android:id="@+id/evaType4"
@@ -201,8 +209,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:background="@drawable/group_row"
-                android:text="Tryk her for at underskriv"
                 android:padding="10dp"
+                android:text="Tryk her for at underskriv"
                 android:textColor="#000000" />
 
             <TextView

@@ -30,25 +30,9 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/Seanydenr"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_toEndOf="@+id/textView2"
-                android:background="@drawable/group_row"
-                android:editable="false"
-                android:enabled="false"
-                android:hint="@string/tolkebureauets_yder_nr_ean_nr"
-                android:inputType="number"
-                android:padding="10dp"
-                android:textColor="#000000" />
-
-            <EditText
                 android:id="@+id/tNavn"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@+id/Seanydenr"
                 android:layout_gravity="center_horizontal"
                 android:layout_toEndOf="@+id/textView2"
                 android:background="@drawable/group_row"
@@ -168,13 +152,13 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/tNavn"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/Seanydenr"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/group_row"
                 android:padding="10dp"
                 android:text="Tolks navn:       "
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_alignParentTop="true" />
 
             <TextView
                 android:id="@+id/textView3"

@@ -23,6 +23,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:editable="false"
+        android:enabled="false"
         android:gravity="center"
         android:text="UDFYLDES AF TOLK"
         android:textColor="#000000"
@@ -37,11 +38,14 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/group_row"
         android:editable="false"
+        android:enabled="false"
+        android:textColor="#000000"
         android:ems="10"
         android:focusable="false"
         android:inputType="none"
         android:padding="10dp"
-        android:text="Tolkning i forbindelse med:" />
+        android:text="Tolkning i forbindelse med:"
+        android:layout_toStartOf="@+id/spinnerOmfang" />
 
     <Spinner
         android:id="@+id/spinnerOmfang"
@@ -92,6 +96,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/group_row"
         android:editable="false"
+        android:enabled="false"
+        android:textColor="#000000"
         android:ems="10"
         android:focusable="false"
         android:inputType="none"
@@ -151,6 +157,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/group_row"
         android:editable="false"
+        android:enabled="false"
+        android:textColor="#000000"
         android:ems="10"
         android:focusable="false"
         android:inputType="none"

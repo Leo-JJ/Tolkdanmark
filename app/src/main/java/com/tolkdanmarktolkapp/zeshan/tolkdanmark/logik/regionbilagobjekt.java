@@ -6,9 +6,9 @@ import java.io.StringReader;
 
 public class regionbilagobjekt implements Serializable {
 
-    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "", enCodedImage = "";
+    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "", enCodedImage = "", email="", interpreter_email="";
 
-    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment, String enCodedImage) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment, String enCodedImage, String email, String interpreter_email) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;
@@ -31,6 +31,8 @@ public class regionbilagobjekt implements Serializable {
         this.eva4 = eva4;
         this.evaComment = evaComment;
         this.enCodedImage = enCodedImage;
+        this.email = email;
+        this.interpreter_email = interpreter_email;
     }
 
     public String getId() {
@@ -207,5 +209,21 @@ public class regionbilagobjekt implements Serializable {
 
     public void setEnCodedImage(String enCodedImage){
         this.enCodedImage = enCodedImage;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getInterpreter_email(){
+        return interpreter_email;
+    }
+
+    public void setInterpreter_email(String interpreter_email) {
+        this.interpreter_email = interpreter_email;
     }
 }

@@ -9,6 +9,7 @@ import android.util.Base64;
 import android.widget.Toast;
 
 import com.tolkdanmarktolkapp.zeshan.tolkdanmark.Fragmenter.Signatur_activity_demo;
+import com.tolkdanmarktolkapp.zeshan.tolkdanmark.Fragmenter.Tolkensunderskrift_fragment;
 
 import org.json.JSONArray;
 import org.ksoap2.SoapEnvelope;
@@ -135,6 +136,98 @@ public class DB_logik {
             @Override
             protected void onPostExecute(Object resultat) {
                 if(Signatur_activity_demo.bilagsendt ) {
+                    Toast.makeText(activity, "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(activity, "Der skete en fejl, brug venligst et almindeligt bilag ", Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+        AsyncTask1 as = new AsyncTask1();
+        as.execute();
+    }
+
+    public static void GenerateLaegetolkbilg(final String id, final String reference_id, final String tolknavn, final String tolkcpr,
+                                             final String klientnavn, final String klientcpr, final String adresse, final String postnr,
+                                             final String by, final String forbindelsevalue, final String omfangevalue,
+                                             final String dato, final String tidfra, final String tidtil, final String antaltimer,
+                                             final String sprog, final String evaluering1, final String evaluering2,
+                                             final String evaluering3, final String evaluering4, final String evalueringof,
+                                             final String laegesydernummer, final String laegensunderskrift, final File tolksunderskrift,
+                                             final String email, final String interpreter_email, final Activity activity
+    ){
+        class AsyncTask1 extends AsyncTask {
+            @Override
+
+            protected Object doInBackground(Object... arg0) {
+
+                try {
+                    String NAMESPACE = "http://tempuri.org/";
+                    String URL = "http://www.tolkdanmark.dk/andriod/v1/GenerateAndSendTolkbilag.asmx";
+                    String SOAP_ACTION = "http://tempuri.org/genaratebilag_new";
+                    String METHOD_NAME = "genaratebilag_new";
+
+                    SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
+                    //parameter
+                    request.addProperty("id", id);
+                    request.addProperty("reference_id", reference_id);
+                    request.addProperty("tolknavn", tolknavn);
+                    request.addProperty("tolkcpr", tolkcpr);
+                    request.addProperty("klientnavn", klientnavn);
+                    request.addProperty("klientcpr", klientcpr);
+                    request.addProperty("adresse", adresse);
+                    request.addProperty("postnr", postnr);
+                    request.addProperty("by", by);
+                    request.addProperty("forbindelsevalue", forbindelsevalue);
+                    request.addProperty("omfangvalue", omfangevalue);
+                    request.addProperty("dato", dato);
+                    request.addProperty("tidfra", tidfra);
+                    request.addProperty("tidtil", tidtil);
+                    request.addProperty("antaltimer", antaltimer);
+                    request.addProperty("sprog", sprog);
+                    request.addProperty("evaluering1", evaluering1);
+                    request.addProperty("evaluering2", evaluering2);
+                    request.addProperty("evaluering3", evaluering3);
+                    request.addProperty("evaluering4", evaluering4);
+                    request.addProperty("evalueringof", evalueringof);
+                    request.addProperty("laegensydernummer", laegesydernummer);
+                    request.addProperty("laegenunderskrift", laegensunderskrift);
+
+                    Bitmap bm = null;
+                    bm = getScaledBitmap(tolksunderskrift.toString(), 343, 355);
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+                    byte[] b = baos.toByteArray();
+                    String encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+                    request.addProperty("tolksunderskfrift", encodedImage);
+                    request.addProperty("email", email);
+                    request.addProperty("interpreter_email", interpreter_email);
+
+                    SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                    envelope.dotNet = true;
+                    envelope.setOutputSoapObject(request);
+                    HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+                    androidHttpTransport.call(SOAP_ACTION, envelope);
+
+                    SoapPrimitive resultsRequestSOAP = (SoapPrimitive) envelope.getResponse();
+                    Tolkensunderskrift_fragment.bilagsendt = true;
+                    return resultsRequestSOAP.toString();
+
+                }
+                catch (XmlPullParserException x){
+                    Tolkensunderskrift_fragment.bilagsendt = true;
+                    return "noshouts ";
+                }
+                catch (Exception e) {
+                    Tolkensunderskrift_fragment.bilagsendt = false;
+                    e.printStackTrace();
+                    return "noshouts ";
+                }
+            }
+            @Override
+            protected void onPostExecute(Object resultat) {
+                if(Tolkensunderskrift_fragment.bilagsendt ) {
                     Toast.makeText(activity, "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
                 }
                 else{

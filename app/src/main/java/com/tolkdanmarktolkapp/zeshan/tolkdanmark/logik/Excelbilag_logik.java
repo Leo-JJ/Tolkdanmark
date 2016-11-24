@@ -51,7 +51,7 @@ public class Excelbilag_logik {
 
     }
 
-    /*public void savetoexcelregion(File imagelocation, Context context, regionbilagobjekt regionbilagindhold, Activity ac)  {
+    public void savetoexcellaege(File imagelocation, Context context, regionbilagobjekt regionbilagindhold, Activity ac)  {
 
         DateTime startTime, endTime;
         DateTimeFormatter formatter = DateTimeFormat.forPattern("HH:mm");
@@ -75,12 +75,13 @@ public class Excelbilag_logik {
         }
         Toast.makeText(ac, "Sender Bilag...", Toast.LENGTH_LONG).show();
 
-        DB_logik.Generatetolkbilg(bilagindhold.getKlientsnavn(),bilagindhold.getCpr(),
-                bilagindhold.getDato(), antaltimer,bilagindhold.getTidtil(),
-                bilagindhold.getTolkebruger(), bilagindhold. getTidfra(), bilagindhold. getTolk(),
-                bilagindhold.getFraktura(), imagelocation,bilagindhold.getId(),
-                bilagindhold.getEmail(), bilagindhold.getInterpreter_email(),
-                bilagindhold.getSprog(), bilagindhold.getgetreference_id(),bilagindhold.getInstitution(), ac);
+        DB_logik.GenerateLaegetolkbilg(regionbilagindhold.getId(), regionbilagindhold.getGetreference_id(), regionbilagindhold.getTolk(),
+                regionbilagindhold.getTolkcpr(), regionbilagindhold.getKlientsnavn(), regionbilagindhold.getCpr(), regionbilagindhold.getAdresse(),
+                regionbilagindhold.getPostnr(), regionbilagindhold.getBy(), regionbilagindhold.getForbindelse(), regionbilagindhold.getOmfang(),
+                regionbilagindhold.getDato(), regionbilagindhold.getTidfra(), regionbilagindhold.getTidtil(), antaltimer,
+                regionbilagindhold.getSprog(), regionbilagindhold.getEva1(), regionbilagindhold.getEva2(), regionbilagindhold.getEva3(),
+                regionbilagindhold.getEva4(), regionbilagindhold.getEvaComment(), regionbilagindhold.getLaegeeanr(), regionbilagindhold.getLaegeunderskrift(),
+                imagelocation, regionbilagindhold.getEmail(), regionbilagindhold.getInterpreter_email(), ac);
 
-    }*/
+    }
 }

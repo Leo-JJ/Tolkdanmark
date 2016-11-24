@@ -146,7 +146,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
             mediaScanIntent.setData(contentUri);
             getActivity().sendBroadcast(mediaScanIntent);
             result = true;
-            //excel.savetoexcel(photo,getContext(), regionbilagindholdet, getActivity());
+            //excel.savetoexcellaege(photo,getContext(), regionbilagindholdet, getActivity());
         } catch (Exception e) {
             e.printStackTrace();
         }

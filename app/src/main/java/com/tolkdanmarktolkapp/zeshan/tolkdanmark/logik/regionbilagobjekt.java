@@ -6,9 +6,9 @@ import java.io.StringReader;
 
 public class regionbilagobjekt implements Serializable {
 
-    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "", enCodedImage = "", email="", interpreter_email="";
+    private String id = "", klientsnavn = "", cpr = "", sprog = "", dato = "", tidfra = "", tidtil = "", tolk = "", getreference_id = "", adresse = "", postnr = "", by = "", tolkcpr = "", forbindelse = "", omfang = "", laegeeanr = "", eva1 = "", eva2 = "", eva3 = "", eva4 = "", evaComment = "", laegeunderskrift = "", email="", interpreter_email="";
 
-    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment, String enCodedImage, String email, String interpreter_email) {
+    public regionbilagobjekt(String id, String klientsnavn, String cpr, String sprog, String dato, String tidfra, String tidtil, String tolk, String getreference_id, String adresse, String postnr, String by, String tolkcpr, String forbindelse, String omfang, String laegeeanr, String eva1, String eva2, String eva3, String eva4, String evaComment, String laegeunderskrift, String email, String interpreter_email) {
         this.id = id;
         this.klientsnavn = klientsnavn;
         this.cpr = cpr;
@@ -30,7 +30,7 @@ public class regionbilagobjekt implements Serializable {
         this.eva3 = eva3;
         this.eva4 = eva4;
         this.evaComment = evaComment;
-        this.enCodedImage = enCodedImage;
+        this.laegeunderskrift = laegeunderskrift;
         this.email = email;
         this.interpreter_email = interpreter_email;
     }
@@ -203,12 +203,12 @@ public class regionbilagobjekt implements Serializable {
         this.evaComment = evaComment;
     }
 
-    public String getEnCodedImage(){
-        return enCodedImage;
+    public String getLaegeunderskrift(){
+        return laegeunderskrift;
     }
 
-    public void setEnCodedImage(String enCodedImage){
-        this.enCodedImage = enCodedImage;
+    public void setLaegeunderskrift(String laegeunderskrift){
+        this.laegeunderskrift = laegeunderskrift;
     }
 
     public String getEmail(){

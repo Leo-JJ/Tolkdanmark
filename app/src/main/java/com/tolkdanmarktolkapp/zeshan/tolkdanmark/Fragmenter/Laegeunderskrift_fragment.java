@@ -46,7 +46,7 @@ public class Laegeunderskrift_fragment extends Fragment {
     private Fragmentmanager fragments = new Fragmentmanager();
     public static boolean bilagsendt = false;
     private boolean emptyPad = false;
-    private String encodedImage;
+    private String laegensunderskrift;
 
 
     @Override
@@ -94,7 +94,7 @@ public class Laegeunderskrift_fragment extends Fragment {
                 if (emptyPad) {
                     Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                     if (addSignatureToGallery(signatureBitmap)) {
-                        regionbilagindholdet.setEnCodedImage(encodedImage);
+                        regionbilagindholdet.setLaegeunderskrift(laegensunderskrift);
                         /*if (Laegeunderskrift_fragment.bilagsendt) {
                             Toast.makeText(getActivity(), "Bilag Sendt, du får en bekræftelse snarest på mail ", Toast.LENGTH_SHORT).show();
                         } else {
@@ -164,7 +164,7 @@ public class Laegeunderskrift_fragment extends Fragment {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bm.compress(Bitmap.CompressFormat.JPEG, 50, baos);
             byte[] b = baos.toByteArray();
-            encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
+            laegensunderskrift = Base64.encodeToString(b, Base64.DEFAULT);
 
             //excel.savetoexcel(photo,getContext(),bilagindholdet);
         } catch (Exception e) {

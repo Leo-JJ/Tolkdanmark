@@ -1,5 +1,8 @@
 package com.tolkdanmarktolkapp.zeshan.tolkdanmark.Fragmenter;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,20 +30,22 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
     private Fragmentmanager fragments = new Fragmentmanager();
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
+
         View rod = i.inflate(R.layout.tolkbilag1_view, container, false);
 
-        next = (Button) rod.findViewById(R.id.next);
-        next.setOnClickListener(this);
-
-        klientsnavn = (EditText) rod.findViewById(R.id.kNavn);
-        cpr = (EditText) rod.findViewById(R.id.kCpr);
-        tolk = (EditText) rod.findViewById(R.id.tNavn);
-        tolkcpr = (EditText) rod.findViewById(R.id.tCpr);
-        adresse = (EditText) rod.findViewById(R.id.kAddress);
-        postnr = (EditText) rod.findViewById(R.id.kPostnr);
-        by = (EditText) rod.findViewById(R.id.kBy);
-
         try {
+
+            next = (Button) rod.findViewById(R.id.next);
+            next.setOnClickListener(this);
+
+            klientsnavn = (EditText) rod.findViewById(R.id.kNavn);
+            cpr = (EditText) rod.findViewById(R.id.kCpr);
+            tolk = (EditText) rod.findViewById(R.id.tNavn);
+            tolkcpr = (EditText) rod.findViewById(R.id.tCpr);
+            adresse = (EditText) rod.findViewById(R.id.kAddress);
+            postnr = (EditText) rod.findViewById(R.id.kPostnr);
+            by = (EditText) rod.findViewById(R.id.kBy);
+
             klientsnavn.setText(object.getString("citizenName"));
             cpr.setText(object.getString("cpr"));
             tolk.setText(object.getString("interpreter_name"));
@@ -49,12 +54,27 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
             postnr.setText(object.getString("postCode"));
             by.setText(object.getString("city"));
 
-        } catch (Exception e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
         return rod;
+    }
+
+    @Override
+    public void onResume() {
+        try {
+            klientsnavn.setText(object.getString("citizenName"));
+            cpr.setText(object.getString("cpr"));
+            tolk.setText(object.getString("interpreter_name"));
+            tolkcpr.setText(object.getString("tolkcpr"));
+            adresse.setText(object.getString("address"));
+            postnr.setText(object.getString("postCode"));
+            by.setText(object.getString("city"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        super.onResume();
     }
 
     @Override
@@ -75,10 +95,10 @@ public class Tolkbilag1_fragment extends Fragment implements View.OnClickListene
                         tolkcpr.getText().toString(),
                         "", "", "", "", "", "", "", "", "", object.getString("email"), object.getString("interpreter_email"));
 
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("regionbilagindholdet", rb);
-            fragments.getTolkbilag2fragment().setArguments(bundle);
-            getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag2fragment()).addToBackStack(fragments.getTolkbilag2fragment().getTag()).commit();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("regionbilagindholdet", rb);
+                fragments.getTolkbilag2fragment().setArguments(bundle);
+                getFragmentManager().beginTransaction().replace(R.id.container, fragments.getTolkbilag2fragment()).addToBackStack(fragments.getTolkbilag2fragment().getTag()).commit();
 
             } catch (JSONException e) {
                 e.printStackTrace();

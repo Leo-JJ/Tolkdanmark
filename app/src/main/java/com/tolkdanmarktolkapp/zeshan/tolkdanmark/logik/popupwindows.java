@@ -165,7 +165,6 @@ public class popupwindows {
             anullerbilag = (ImageButton) layout.findViewById(R.id.annuller1);
             underskrivbilag = (ImageButton) layout.findViewById(R.id.Underskriv);
 
-
             klientsnavn.setText(object.getString("citizenName"));
             cpr.setText(object.getString("cpr"));
             sprog.setText(object.getString("language"));

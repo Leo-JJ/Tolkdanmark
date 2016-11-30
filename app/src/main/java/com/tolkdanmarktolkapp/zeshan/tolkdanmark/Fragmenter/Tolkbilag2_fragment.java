@@ -21,6 +21,7 @@ import com.tolkdanmarktolkapp.zeshan.tolkdanmark.logik.regionbilagobjekt;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.Objects;
 
 /**
@@ -41,24 +42,27 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
     private int[] val4 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
-        View rod = i.inflate(R.layout.tolkbilag2_view, container, false);
-        next = (Button) rod.findViewById(R.id.next);
 
-        spinnerForbindelse = (Spinner) rod.findViewById(R.id.spinnerForbindelse);
-        spinnerOmfang = (Spinner) rod.findViewById(R.id.spinnerOmfang);
-        spinnerType = (Spinner) rod.findViewById(R.id.spinnerType);
-        forbindelseValue = (TextView) rod.findViewById(R.id.forbindelseValue); //Slettes senere, det er kun for at test
-        omfangValue = (TextView) rod.findViewById(R.id.omfangValue); //Slettes senere, det er kun for at test
-        sprog = (EditText) rod.findViewById(R.id.Sprog);
-        dato = (EditText) rod.findViewById(R.id.Dato);
-        tidfra = (EditText) rod.findViewById(R.id.startTid);
-        tidtil = (EditText) rod.findViewById(R.id.slutTid);
+        View rod = i.inflate(R.layout.tolkbilag2_view, container, false);
 
         try {
+            next = (Button) rod.findViewById(R.id.next);
+
+            spinnerForbindelse = (Spinner) rod.findViewById(R.id.spinnerForbindelse);
+            spinnerOmfang = (Spinner) rod.findViewById(R.id.spinnerOmfang);
+            spinnerType = (Spinner) rod.findViewById(R.id.spinnerType);
+            forbindelseValue = (TextView) rod.findViewById(R.id.forbindelseValue); //Slettes senere, det er kun for at test
+            omfangValue = (TextView) rod.findViewById(R.id.omfangValue); //Slettes senere, det er kun for at test
+            sprog = (EditText) rod.findViewById(R.id.Sprog);
+            dato = (EditText) rod.findViewById(R.id.Dato);
+            tidfra = (EditText) rod.findViewById(R.id.startTid);
+            tidtil = (EditText) rod.findViewById(R.id.slutTid);
+
             dato.setText(object.getString("order_date"));
             tidfra.setText(object.getString("starttime"));
             tidtil.setText(object.getString("endtime"));
             sprog.setText(object.getString("language"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,11 +198,24 @@ public class Tolkbilag2_fragment extends Fragment implements Datovaelger_Fragmen
             }
         });
 
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
 
         return rod;
+    }
+
+    @Override
+    public void onResume() {
+        try {
+            dato.setText(object.getString("order_date"));
+            tidfra.setText(object.getString("starttime"));
+            tidtil.setText(object.getString("endtime"));
+            sprog.setText(object.getString("language"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        super.onResume();
     }
 
     public void valueUpdate() {

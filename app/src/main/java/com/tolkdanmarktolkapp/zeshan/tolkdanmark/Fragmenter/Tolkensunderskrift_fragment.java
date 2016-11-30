@@ -112,6 +112,7 @@ public class Tolkensunderskrift_fragment extends Fragment {
         if (getArguments() != null) {
             regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
+
         return rod;
     }
 

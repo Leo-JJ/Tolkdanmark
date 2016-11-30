@@ -35,21 +35,24 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
     public static JSONObject object;
 
     public View onCreateView(LayoutInflater i, ViewGroup container, Bundle savedInstanceState) {
+
         View rod = i.inflate(R.layout.tolkbilag3_view, container, false);
 
-        next = (Button) rod.findViewById(R.id.next);
-        next.setOnClickListener(this);
-
-        evaType1 = (Spinner) rod.findViewById(R.id.evaType1);
-        evaType2 = (Spinner) rod.findViewById(R.id.evaType2);
-        evaType3 = (Spinner) rod.findViewById(R.id.evaType3);
-        evaType4 = (Spinner) rod.findViewById(R.id.evaType4);
-
-        evaComment = (EditText) rod.findViewById(R.id.evaComment);
-        laegeydernr = (EditText) rod.findViewById(R.id.laegeydernr);
-
         try {
+            next = (Button) rod.findViewById(R.id.next);
+            next.setOnClickListener(this);
+
+            evaType1 = (Spinner) rod.findViewById(R.id.evaType1);
+            evaType2 = (Spinner) rod.findViewById(R.id.evaType2);
+            evaType3 = (Spinner) rod.findViewById(R.id.evaType3);
+            evaType4 = (Spinner) rod.findViewById(R.id.evaType4);
+
+            evaComment = (EditText) rod.findViewById(R.id.evaComment);
+            laegeydernr = (EditText) rod.findViewById(R.id.laegeydernr);
+
             laegeydernr.setText(object.getString("provider"));
+            evaComment.setText("");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -59,13 +62,6 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
         evaCounter2 = (TextView) rod.findViewById(R.id.evaCounter2);
         evaCounter3 = (TextView) rod.findViewById(R.id.evaCounter3);
         evaCounter4 = (TextView) rod.findViewById(R.id.evaCounter4);
-
-        try {
-            laegeydernr.setText(object.getString(""));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        evaComment.setText("");
 
         String[] eva1 = new String[]{
                 "God",
@@ -151,11 +147,22 @@ public class Tolkbilag3_fragment extends Fragment implements View.OnClickListene
             }
         });
 
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             regionbilagindholdet = (regionbilagobjekt) getArguments().getSerializable("regionbilagindholdet");
         }
 
         return rod;
+    }
+
+    @Override
+    public void onResume() {
+        try {
+            laegeydernr.setText(object.getString("provider"));
+            evaComment.setText("");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        super.onResume();
     }
 
     @Override

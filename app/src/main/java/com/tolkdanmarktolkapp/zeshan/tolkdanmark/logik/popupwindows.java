@@ -17,6 +17,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,6 +76,7 @@ public class popupwindows {
     public void initiatePopupWindow(String adresse, FragmentActivity activity) {
         this.activity = activity;
         Toast.makeText(activity, "Finder adresse", Toast.LENGTH_SHORT).show();
+        Log.d("Adreasse", adresse);
         try {
             LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if (layout == null) {
@@ -86,8 +88,8 @@ public class popupwindows {
             luk.setOnClickListener(cancel_button_click_listener);
 
             if (googleMap == null) {
-                googleMap = ((MapFragment) activity.getFragmentManager().findFragmentById(R.id.map2)).getMap();
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.706482, 12.462798), 13));
+                googleMap = (((MapFragment) activity.getFragmentManager().findFragmentById(R.id.map2)).getMap());
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(55.694501, 12.434508), 13));
             }
             googleMap.clear();
             new GeocoderTask().execute(adresse);
